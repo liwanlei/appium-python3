@@ -1,5 +1,125 @@
 login:
   login1:
+    username: '319197149@qq.com'
+    password: 'leizi'
+    suc: 1
+    assert: '账号或者密码错误'
+  login2:
+    username: ''
+    password: 'leizi'
+    suc: 1
+    assert: '账号不能为空'
+  login3:
+    username: 'leizi'
+    password: ''
+    suc: 1
+    assert: '密码不能为空'
+  login4:
+    username: 'lei zi'
+    password: '12'
+    suc: 1
+    assert: '账号输入错误'
+  login5:
+    username: '15964636199'
+    password: 'li930423'
+    suc: 0
+    assert: 'Lipzig'
+  login6:
+    username: '111270002'
+    password: 'li930423'
+    suc: 0
+    assert: 'Lipzig'
+  login7:
+    username: 'leiziasd'
+    password: 'li930423'
+    suc: 0
+    assert: 'Lipzig'
+
+  login8:
+    username: '15964636199'
+    password: 'li93042'
+    suc: 1
+    assert: '账号或者密码错误'
+  login9:
+    username: '111270002'
+    password: 'li90423'
+    suc: 1
+    assert: '账号或者密码错误'
+  login10:
+    username: 'leiziasd'
+    password: 'li93423'
+    suc: 1
+    assert: '账号或者密码错误'
+  login11:
     username: ''
     password: ''
-    result: ''
+    suc: 1
+    assert: '账号不能为空'
+zhuce:
+  zhuce1:
+    username: ''
+    password: ''
+    yanzhengma: ''
+    suc: 1
+    assert: '请输入您的手机号/邮箱'
+  zhuce2:
+    username: 'li'
+    password: ''
+    yanzhengma: ''
+    suc: 1
+    assert: '请输入密码'
+  zhuce3:
+    username: 'li'
+    password: '32'
+    yanzhengma: ''
+    suc: 1
+    assert: '请输入8-16位字母数字组合密码'
+  zhuce4:
+    username: 'li'
+    password: '33256563265565652'
+    yanzhengma: ''
+    suc: 1
+    assert: '请输入8-16位字母数字组合密码'
+  zhuce5:
+    username: 'li'
+    password: 'li3325656326225565652'
+    yanzhengma: ''
+    suc: 1
+    assert: '请输入8-16位字母数字组合密码'
+  zhuce6:
+    username: 'li'
+    password: '56563265565652'
+    yanzhengma: ''
+    suc: 1
+    assert: '请输入8-16位字母数字组合密码'
+  zhuce7:
+    username: 'li'
+    password: 'li123235'
+    yanzhengma: ''
+    suc: 1
+    assert: '请输入验证码'
+  zhuce8:
+    username: 'li'
+    password: 'li123235'
+    yanzhengma: '11'
+    suc: 1
+    assert: '您输入的手机号/邮箱格式不正确'
+  zhuce9:
+    username: '15964636199'
+    password: 'li123235'
+    yanzhengma: '11'
+    suc: 1
+    assert: '手机号已被注册或已被绑定'
+  zhuce10:
+    username: '15964636199'
+    password: 'li123235'
+    yanzhengma: '11'
+    suc: 1
+    assert: '验证码不正确！'
+  zhuce11:
+    username: '15964'
+    password: 'li123235'
+    yanzhengma: '11'
+    suc: 1
+    assert: '您输入的手机号/邮箱格式不正确'
+
