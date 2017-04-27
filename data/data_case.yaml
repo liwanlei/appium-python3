@@ -122,4 +122,11 @@ zhuce:
     yanzhengma: '11'
     suc: 1
     assert: '您输入的手机号/邮箱格式不正确'
+logut:
+  logut1:
+    suc: 1
+    assert: 'Lipzig'
+  logout2:
+    suc: 0
+    assert: '点击登录'
 
