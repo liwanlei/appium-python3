@@ -9,22 +9,21 @@ from log import  log_case
 from public.zhuce_pub import Regust
 from appium import webdriver
 class Registe(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
+    def setUp(self):
         title = u'注册测试'
-        cls.logs = log_case.Logger(title)
-        cls.dis_app = {}
-        cls.dis_app['platformName'] = 'Android'
-        cls.dis_app['platformVersion'] = '5.0.2'
-        cls.dis_app['deviceName'] = 'emulator-5554'
-        cls.dis_app['appPackage'] = 'com.aixuetang.online'
-        cls.dis_app['appActivity'] = 'com.aixuetang.mobile.activities.HomeActivity'
-        cls.deriver = webdriver.Remote('http://localhost:4723/wd/hub', cls.dis_app)
-        cls.faile=open(r'C:\Users\Administrator\Desktop\xuesheng\data\data_case.yaml','r',encoding='utf-8')
-        cls.data=yaml.load(cls.faile)
-        cls.faile.close()
-        cls.data=cls.data['zhuce']
-        cls.res=Regust(cls.deriver)
+        self.logs = log_case.Logger(title)
+        self.dis_app = {}
+        self.dis_app['platformName'] = 'Android'
+        self.dis_app['platformVersion'] = '6.0'
+        self.dis_app['deviceName'] = 'emulator-5554'
+        self.dis_app['appPackage'] = 'com.aixuetang.online'
+        self.dis_app['appActivity'] = 'com.aixuetang.mobile.activities.HomeActivity'
+        self.deriver = webdriver.Remote('http://localhost:4726/wd/hub', self.dis_app)
+        self.faile=open(r'C:\Users\Administrator\Desktop\xuesheng\data\data_case.yaml','r',encoding='utf-8')
+        self.data=yaml.load(self.faile)
+        self.faile.close()
+        self.data=self.data['zhuce']
+        self.res=Regust(self.deriver)
     def testreg_1(self):
         try:
             self.user=self.data['zhuce1']['username']
@@ -194,6 +193,7 @@ class Registe(unittest.TestCase):
         except Exception as e:
             self.logs.error_log(e)
             print('reg11 fail  reson is :%s'%e)
-    @classmethod
-    def tearDownClass(cls):
-        cls.deriver.quit()
+
+    def tearDown(self):
+        self.deriver.close()
+        self.deriver.quit()

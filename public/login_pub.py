@@ -25,7 +25,7 @@ class Login:
         try:
             time.sleep(6)
             self.deriver.find_elements_by_id(self.herenzhongxin)[2].click()
-            time.sleep(6)
+            time.sleep(3)
             self.deriver.find_element_by_id(self.logi).click()
             print('2')
             time.sleep(1)

@@ -10,22 +10,21 @@ from public.logout_pub import logout
 from log import log_case
 from public.login_pub import Login
 class Logintest(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
+    def setUp(self):
         title='登录测试'
-        cls.dis_app = {}
-        cls.dis_app['platformName'] = 'Android'
-        cls.dis_app['platformVersion'] = '5.0.2'
-        cls.dis_app['deviceName'] = 'emulator-5554'
-        cls.dis_app['appPackage'] = 'com.aixuetang.online'
-        cls.dis_app['appActivity'] = 'com.aixuetang.mobile.activities.HomeActivity'
-        cls.deriver = webdriver.Remote('http://localhost:4723/wd/hub', cls.dis_app)
-        cls.faile=open(r'C:\Users\Administrator\Desktop\xuesheng\data\data_case.yaml','r',encoding='utf-8')
-        cls.data=yaml.load(cls.faile)
-        cls.faile.close()
-        cls.logcan=log_case.Logger(title)
-        cls.data=cls.data['login']
-        cls.logs=Login(cls.deriver)
+        self.dis_app = {}
+        self.dis_app['platformName'] = 'Android'
+        self.dis_app['platformVersion'] = '6.0'
+        self.dis_app['deviceName'] = 'emulator-5554'
+        self.dis_app['appPackage'] = 'com.aixuetang.online'
+        self.dis_app['appActivity'] = 'com.aixuetang.mobile.activities.HomeActivity'
+        self.deriver = webdriver.Remote('http://localhost:4725/wd/hub', self.dis_app)
+        self.faile=open(r'C:\Users\Administrator\Desktop\xuesheng\data\data_case.yaml','r',encoding='utf-8')
+        self.data=yaml.load(self.faile)
+        self.faile.close()
+        self.logcan=log_case.Logger(title)
+        self.data=self.data['login']
+        self.logs=Login(self.deriver)
     def test_login_1(self):
         try:
             self.user=self.data['login1']['username']
@@ -33,7 +32,7 @@ class Logintest(unittest.TestCase):
             self.suc=self.data['login1']['suc']
             self.assert_v=self.data['login1']['assert']
             self.assert_return=self.logs.login(self.suc,self.user,self.passw)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\login\login1.pang')
+            self.deriver.get_screenshot_as_file(r'login1.pang')
             self.logcan.info_log('input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
             print('login1')
             time.sleep(1)
@@ -199,7 +198,6 @@ class Logintest(unittest.TestCase):
         except Exception as e:
             self.logcan.error_log(e)
             print('login7 fail,reson:%s' % e)
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.deriver.quit()
+    def tearDown(self):
+        self.deriver.close()
+        self.deriver.quit()
