@@ -10,7 +10,7 @@ from email.mime.text import MIMEText
 from email.utils import parseaddr, formataddr
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
-import smtplib,time
+import smtplib,time,os
 def create_report_sendemali(now,from_addr,password,mail_to):
     mail_body = ''
     msg = MIMEMultipart()

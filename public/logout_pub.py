@@ -6,6 +6,7 @@
 @file: logout_pub.py
 @time: 2017/4/27 13:07
 """
+from appium import  webdriver
 import yaml
 class logout:
     def __init__(self,deriver):

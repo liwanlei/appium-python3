@@ -33,7 +33,7 @@ class Registe(unittest.TestCase):
             self.suc=self.data['zhuce1']['suc']
             self.asserts=self.data['zhuce1']['assert']
             self.asser_return=self.res.register1(self.suc,self.user,self.password,self.yanzheng)
-            self.deriver.get_screenshot_as_file('C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst1.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst1.pang')
             self.logs.info_log(('input data:name:%s,pwd:%s,yanzhengma:%s suc:%s,assert:%s' % (self.user, self.password, self.yanzheng,self.suc, self.asserts)))
             time.sleep(1)
             self.assertEqual(self.asser_return,self.asserts,msg='fail resons:%s !=%s'%(self.asser_return,self.asserts))
@@ -48,7 +48,7 @@ class Registe(unittest.TestCase):
             self.suc=self.data['zhuce2']['suc']
             self.asserts=self.data['zhuce2']['assert']
             self.asser_return=self.res.register1(self.suc,self.user,self.password,self.yanzheng)
-            self.deriver.get_screenshot_as_file('C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst2.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst2.pang')
             self.logs.info_log(('input data:name:%s,pwd:%s,yanzhengma:%s suc:%s,assert:%s' % (self.user, self.password, self.yanzheng,self.suc, self.asserts)))
             time.sleep(1)
             self.assertEqual(self.asser_return,self.asserts,msg='fail resons:%s !=%s'%(self.asser_return,self.asserts))
@@ -63,7 +63,7 @@ class Registe(unittest.TestCase):
             self.suc=self.data['zhuce3']['suc']
             self.asserts=self.data['zhuce3']['assert']
             self.asser_return=self.res.register1(self.suc,self.user,self.password,self.yanzheng)
-            self.deriver.get_screenshot_as_file('C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst3.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst3.pang')
             self.logs.info_log(('input data:name:%s,pwd:%s,yanzhengma:%s suc:%s,assert:%s' % (self.user, self.password, self.yanzheng,self.suc, self.asserts)))
             time.sleep(1)
             self.assertEqual(self.asser_return,self.asserts,msg='fail resons:%s !=%s'%(self.asser_return,self.asserts))
@@ -78,7 +78,7 @@ class Registe(unittest.TestCase):
             self.suc=self.data['zhuce4']['suc']
             self.asserts=self.data['zhuce4']['assert']
             self.asser_return=self.res.register1(self.suc,self.user,self.password,self.yanzheng)
-            self.deriver.get_screenshot_as_file('C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst4.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst4.pang')
             time.sleep(1)
             self.assertEqual(self.asser_return,self.asserts,msg='fail resons:%s !=%s'%(self.asser_return,self.asserts))
         except Exception as e:
@@ -92,7 +92,7 @@ class Registe(unittest.TestCase):
             self.suc=self.data['zhuce5']['suc']
             self.asserts=self.data['zhuce5']['assert']
             self.asser_return=self.res.register1(self.suc,self.user,self.password,self.yanzheng)
-            self.deriver.get_screenshot_as_file('C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst5.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst5.pang')
             self.logs.info_log(('input data:name:%s,pwd:%s,yanzhengma:%s suc:%s,assert:%s' % (self.user, self.password, self.yanzheng,self.suc, self.asserts)))
 
             time.sleep(1)
@@ -108,7 +108,7 @@ class Registe(unittest.TestCase):
             self.suc=self.data['zhuce6']['suc']
             self.asserts=self.data['zhuce6']['assert']
             self.asser_return=self.res.register1(self.suc,self.user,self.password,self.yanzheng)
-            self.deriver.get_screenshot_as_file('C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst6.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst6.pang')
             self.logs.info_log(('input data:name:%s,pwd:%s,yanzhengma:%s suc:%s,assert:%s' % (self.user, self.password, self.yanzheng,self.suc, self.asserts)))
             time.sleep(1)
             self.assertEqual(self.asser_return,self.asserts,msg='fail resons:%s !=%s'%(self.asser_return,self.asserts))
@@ -123,7 +123,7 @@ class Registe(unittest.TestCase):
             self.suc=self.data['zhuce7']['suc']
             self.asserts=self.data['zhuce7']['assert']
             self.asser_return=self.res.register1(self.suc,self.user,self.password,self.yanzheng)
-            self.deriver.get_screenshot_as_file('C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst7.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst7.pang')
             self.logs.info_log(('input data:name:%s,pwd:%s,yanzhengma:%s suc:%s,assert:%s' % (self.user, self.password, self.yanzheng,self.suc, self.asserts)))
             time.sleep(1)
             self.assertEqual(self.asser_return,self.asserts,msg='fail resons:%s !=%s'%(self.asser_return,self.asserts))
@@ -138,7 +138,7 @@ class Registe(unittest.TestCase):
             self.suc=self.data['zhuce8']['suc']
             self.asserts=self.data['zhuce8']['assert']
             self.asser_return=self.res.register1(self.suc,self.user,self.password,self.yanzheng)
-            self.deriver.get_screenshot_as_file('C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst8.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst8.pang')
             self.logs.info_log(('input data:name:%s,pwd:%s,yanzhengma:%s suc:%s,assert:%s' % (self.user, self.password, self.yanzheng,self.suc, self.asserts)))
 
             time.sleep(1)
@@ -154,7 +154,7 @@ class Registe(unittest.TestCase):
             self.suc=self.data['zhuce9']['suc']
             self.asserts=self.data['zhuce9']['assert']
             self.asser_return=self.res.register2(self.suc,self.user,self.password,self.yanzheng)
-            self.deriver.get_screenshot_as_file('C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst9.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst9.pang')
             self.logs.info_log(('input data:name:%s,pwd:%s,yanzhengma:%s suc:%s,assert:%s' % (self.user, self.password, self.yanzheng,self.suc, self.asserts)))
 
             time.sleep(1)
@@ -170,7 +170,7 @@ class Registe(unittest.TestCase):
             self.suc=self.data['zhuce10']['suc']
             self.asserts=self.data['zhuce10']['assert']
             self.asser_return=self.res.register1(self.suc,self.user,self.password,self.yanzheng)
-            self.deriver.get_screenshot_as_file('C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst10.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst10.pang')
             self.logs.info_log(('input data:name:%s,pwd:%s,yanzhengma:%s suc:%s,assert:%s' % (self.user, self.password, self.yanzheng,self.suc, self.asserts)))
 
             time.sleep(1)
@@ -186,7 +186,7 @@ class Registe(unittest.TestCase):
             self.suc=self.data['zhuce11']['suc']
             self.asserts=self.data['zhuce11']['assert']
             self.asser_return=self.res.register1(self.suc,self.user,self.password,self.yanzheng)
-            self.deriver.get_screenshot_as_file('C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst11.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst11.pang')
             self.logs.info_log(('input data:name:%s,pwd:%s,yanzhengma:%s suc:%s,assert:%s' % (self.user, self.password, self.yanzheng,self.suc, self.asserts)))
 
             time.sleep(1)

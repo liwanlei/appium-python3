@@ -10,7 +10,7 @@ class Logger():
         self.day = time.strftime("%Y%m%d", time.localtime(time.time()))
         self.logger=logging.Logger(title)
         self.logger.setLevel(logging.INFO)
-        self.logfile=logging.FileHandler(r'.\log\%s.log'%self.day)
+        self.logfile=logging.FileHandler(r'C:\Users\Administrator\Desktop\xuesheng\log\%s.log'%self.day)
         self.logfile.setLevel(logging.INFO)
         self.control=logging.StreamHandler()
         self.control.setLevel(logging.INFO)
