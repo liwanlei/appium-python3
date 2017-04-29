@@ -8,10 +8,12 @@
 """
 from appium import  webdriver
 import yaml,time
+from log.log_case import Logger
 class Regust:
     def __init__(self,deriver):
+        title='zhuce'
         self.deriver=deriver
-        self.file=open(r'C:\Users\Administrator\Desktop\xuesheng\data\data_dingwei.yaml','r',encoding='utf-8')
+        self.file=open(r'C:\Users\Administrator\Desktop\appium-python3\data\data_dingwei.yaml','r',encoding='utf-8')
         self.data=yaml.load(self.file)
         self.file.close()
         self.regest_for=self.data['zhuce']['zhuce_ye_id']
@@ -23,6 +25,7 @@ class Regust:
         self.yanzhengmahuo=self.data['zhuce']['huoquyanzhengma_id']
         self.regist_fail=self.data['zhuce']['fail_id']
         self.regest_btn=self.data['zhuce']['zhuce_btn']
+        self.logs=Logger(title)
     def register1(self,suc,user,password,yanzhengma):
         try:
             time.sleep(6)
@@ -48,6 +51,7 @@ class Regust:
             if suc ==0:
                 pass
         except Exception as e:
+            self.logs.error_log(e)
             print(e)
         finally:
             self.deriver.quit()
@@ -71,6 +75,7 @@ class Regust:
                 yanzheng.send_keys(yanzhengma)
                 self.deriver.find_elements_by_id(self.regest_btn).click()
         except Exception as e:
+            self.logs.error_log(e)
             print(e)
         finally:
             self.deriver.quit()

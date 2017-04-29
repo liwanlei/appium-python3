@@ -7,22 +7,23 @@
 from appium import webdriver
 import yaml,unittest,time
 from public.logout_pub import logout
-from log import log_case
+from log.log_case import Logger
 from public.login_pub import Login
 class Logintest(unittest.TestCase):
     def setUp(self):
         title='登录测试'
         self.dis_app = {}
         self.dis_app['platformName'] = 'Android'
-        self.dis_app['platformVersion'] = '6.0'
+        self.dis_app['platformVersion'] = '5.1.1'
         self.dis_app['deviceName'] = 'emulator-5554'
         self.dis_app['appPackage'] = 'com.aixuetang.online'
         self.dis_app['appActivity'] = 'com.aixuetang.mobile.activities.HomeActivity'
-        self.deriver = webdriver.Remote('http://localhost:4725/wd/hub', self.dis_app)
-        self.faile=open(r'C:\Users\Administrator\Desktop\xuesheng\data\data_case.yaml','r',encoding='utf-8')
+        self.deriver = webdriver.Remote('http://localhost:4723/wd/hub', self.dis_app)
+        time.sleep(10)
+        self.faile=open(r'C:\Users\Administrator\Desktop\appium-python3\data\data_case.yaml','r',encoding='utf-8')
         self.data=yaml.load(self.faile)
         self.faile.close()
-        self.logcan=log_case.Logger(title)
+        self.logcan=Logger(title)
         self.data=self.data['login']
         self.logs=Login(self.deriver)
     def test_login_1(self):
@@ -38,7 +39,7 @@ class Logintest(unittest.TestCase):
             time.sleep(1)
             self.assertEqual(self.assert_v, self.assert_return,msg='fail resons:%s !=%s'%(self.assert_v,self.assert_return))
         except Exception as e:
-            self.logcan.error_log(e)
+            self.logcan.error_log(u'失败原因：%s'%e)
             print('login1 fail,reson:%s'%e)
     def test_login_2(self):
         try:
@@ -47,12 +48,13 @@ class Logintest(unittest.TestCase):
             self.suc=self.data['login2']['suc']
             self.assert_v=self.data['login2']['assert']
             self.assert_return=self.logs.login(self.suc,self.user,self.passw)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\login2.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\appium-python3\jietu\login2.pang')
             self.logcan.info_log('input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
             time.sleep(1)
             print('login1')
             self.assertEqual(self.assert_v, self.assert_return,msg='fail resons:%s !=%s'%(self.assert_v,self.assert_return))
         except Exception as e:
+            self.logcan.error_log(u'失败原因：%s' % e)
             print('login2 fail,reson:%s'%e)
     def test_login_3(self):
         try:
@@ -61,13 +63,13 @@ class Logintest(unittest.TestCase):
             self.suc=self.data['login3']['suc']
             self.assert_v=self.data['login3']['assert']
             self.assert_return=self.logs.login(self.suc,self.user,self.passw)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\login3.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\appium-python3\jietu\login3.pang')
             self.logcan.info_log('input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
             time.sleep(1)
             print('login1')
             self.assertEqual(self.assert_v, self.assert_return,msg='fail resons:%s !=%s'%(self.assert_v,self.assert_return))
         except Exception as e:
-            self.logcan.error_log(e)
+            self.logcan.error_log(u'失败原因：%s' % e)
             print('login3 fail,reson:%s'%e)
     def test_login_4(self):
         try:
@@ -76,13 +78,13 @@ class Logintest(unittest.TestCase):
             self.suc=self.data['login4']['suc']
             self.assert_v=self.data['login4']['assert']
             self.assert_return=self.logs.login(self.suc,self.user,self.passw)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\login4.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\appium-python3\jietu\login4.pang')
             self.logcan.info_log('input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
             time.sleep(1)
             print('login1')
             self.assertEqual(self.assert_v, self.assert_return,msg='fail resons:%s !=%s'%(self.assert_v,self.assert_return))
         except Exception as e:
-            self.logcan.error_log(e)
+            self.logcan.error_log(u'失败原因：%s' % e)
             print('login4 fail,reson:%s'%e)
     def test_login_8(self):
         try:
@@ -91,14 +93,14 @@ class Logintest(unittest.TestCase):
             self.suc=self.data['login8']['suc']
             self.assert_v=self.data['login8']['assert']
             self.assert_return=self.logs.login(self.suc,self.user,self.passw)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\login8.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\appium-python3\jietu\login8.pang')
             self.logcan.info_log(
                 'input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
             time.sleep(1)
             print('login1')
             self.assertEqual(self.assert_v, self.assert_return,msg='fail resons:%s !=%s'%(self.assert_v,self.assert_return))
         except Exception as e:
-            self.logcan.error_log(e)
+            self.logcan.error_log(u'失败原因：%s' % e)
             print('login8 fail,reson:%s'%e)
     def test_login_9(self):
         try:
@@ -107,13 +109,13 @@ class Logintest(unittest.TestCase):
             self.suc=self.data['login9']['suc']
             self.assert_v=self.data['login9']['assert']
             self.assert_return=self.logs.login(self.suc,self.user,self.passw)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\login9.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\appium-python3\jietu\login9.pang')
             self.logcan.info_log(
                 'input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
             time.sleep(1)
             self.assertEqual(self.assert_v, self.assert_return,msg='fail resons:%s !=%s'%(self.assert_v,self.assert_return))
         except Exception as e:
-            self.logcan.error_log(e)
+            self.logcan.error_log(u'失败原因：%s' % e)
             print('login9 fail,reson:%s'%e)
     def test_login_10(self):
         try:
@@ -122,13 +124,13 @@ class Logintest(unittest.TestCase):
             self.suc=self.data['login10']['suc']
             self.assert_v=self.data['login10']['assert']
             self.assert_return=self.logs.login(self.suc,self.user,self.passw)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\login710.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\appium-python3\jietu\login710.pang')
             self.logcan.info_log(
                 'input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
             time.sleep(1)
             self.assertEqual(self.assert_v, self.assert_return,msg='fail resons:%s !=%s'%(self.assert_v,self.assert_return))
         except Exception as e:
-            self.logcan.error_log(e)
+            self.logcan.error_log(u'失败原因：%s' % e)
             print('login10 fail,reson:%s'%e)
     def test_login_11(self):
         try:
@@ -137,12 +139,12 @@ class Logintest(unittest.TestCase):
             self.suc=self.data['login11']['suc']
             self.assert_v=self.data['login11']['assert']
             self.assert_return=self.logs.login(self.suc,self.user,self.passw)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\login11.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\appium-python3\jietu\login11.pang')
             self.logcan.info_log('input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
             time.sleep(1)
             self.assertEqual(self.assert_v, self.assert_return,msg='fail resons:%s !=%s'%(self.assert_v,self.assert_return))
         except Exception as e:
-            self.logcan.error_log(e)
+            self.logcan.error_log(u'失败原因：%s' % e)
             print('login11 fail,reson:%s'%e)
 
     def test_login_5(self):
@@ -152,7 +154,7 @@ class Logintest(unittest.TestCase):
             self.suc = self.data['login5']['suc']
             self.assert_v = self.data['login5']['assert']
             self.assert_return = self.logs.login(self.suc, self.user, self.passw)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\login5.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\appium-python3\jietu\login5.pang')
             self.logcan.info_log(
                 'input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
             time.sleep(1)
@@ -170,7 +172,7 @@ class Logintest(unittest.TestCase):
             self.suc = self.data['login6']['suc']
             self.assert_v = self.data['login6']['assert']
             self.assert_return = self.logs.login(self.suc, self.user, self.passw)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\login6.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\appium-python3\jietu\login6.pang')
             self.logcan.info_log(
                 'input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
             time.sleep(1)
@@ -188,7 +190,7 @@ class Logintest(unittest.TestCase):
             self.suc = self.data['login7']['suc']
             self.assert_v = self.data['login7']['assert']
             self.assert_return = self.logs.login(self.suc, self.user, self.passw)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\login7.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\appium-python3\jietu\login7.pang')
             self.logcan.info_log(
                 'input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
             time.sleep(1)
