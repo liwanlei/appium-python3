@@ -14,13 +14,16 @@ class Registe(unittest.TestCase):
         self.logs =Logger(title)
         self.dis_app = {}
         self.dis_app['platformName'] = 'Android'
-        self.dis_app['platformVersion'] = '5.1.1'
+        self.dis_app['platformVersion'] = '6.0'
         self.dis_app['deviceName'] = 'emulator-5554'
         self.dis_app['appPackage'] = 'com.aixuetang.online'
         self.dis_app['appActivity'] = 'com.aixuetang.mobile.activities.HomeActivity'
+        self.dis_app['androidDeviceReadyTimeout']=30
+        self.dis_app['unicodeKeyboard']=True
+        self.dis_app['resetKeyboard']=True
         self.deriver = webdriver.Remote('http://localhost:4723/wd/hub', self.dis_app)
         time.sleep(10)
-        self.faile=open(r'C:\Users\Administrator\Desktop\appium-python3\data\data_case.yaml','r',encoding='utf-8')
+        self.faile=open(r'C:\Users\Administrator\Desktop\xuesheng\data\data_case.yaml','r',encoding='utf-8')
         self.data=yaml.load(self.faile)
         self.faile.close()
         self.data=self.data['zhuce']
@@ -33,7 +36,7 @@ class Registe(unittest.TestCase):
             self.suc=self.data['zhuce1']['suc']
             self.asserts=self.data['zhuce1']['assert']
             self.asser_return=self.res.register1(self.suc,self.user,self.password,self.yanzheng)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\appium-python3\jietu\zhuce\regst1.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst1.pang')
             self.logs.info_log(('input data:name:%s,pwd:%s,yanzhengma:%s suc:%s,assert:%s' % (self.user, self.password, self.yanzheng,self.suc, self.asserts)))
             time.sleep(1)
             self.assertEqual(self.asser_return,self.asserts,msg='fail resons:%s !=%s'%(self.asser_return,self.asserts))
@@ -48,7 +51,7 @@ class Registe(unittest.TestCase):
             self.suc=self.data['zhuce2']['suc']
             self.asserts=self.data['zhuce2']['assert']
             self.asser_return=self.res.register1(self.suc,self.user,self.password,self.yanzheng)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\appium-python3\jietu\zhuce\regst2.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst2.pang')
             self.logs.info_log(('input data:name:%s,pwd:%s,yanzhengma:%s suc:%s,assert:%s' % (self.user, self.password, self.yanzheng,self.suc, self.asserts)))
             time.sleep(1)
             self.assertEqual(self.asser_return,self.asserts,msg='fail resons:%s !=%s'%(self.asser_return,self.asserts))
@@ -63,7 +66,7 @@ class Registe(unittest.TestCase):
             self.suc=self.data['zhuce3']['suc']
             self.asserts=self.data['zhuce3']['assert']
             self.asser_return=self.res.register1(self.suc,self.user,self.password,self.yanzheng)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\appium-python3\jietu\zhuce\regst3.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst3.pang')
             self.logs.info_log(('input data:name:%s,pwd:%s,yanzhengma:%s suc:%s,assert:%s' % (self.user, self.password, self.yanzheng,self.suc, self.asserts)))
             time.sleep(1)
             self.assertEqual(self.asser_return,self.asserts,msg='fail resons:%s !=%s'%(self.asser_return,self.asserts))
@@ -78,7 +81,7 @@ class Registe(unittest.TestCase):
             self.suc=self.data['zhuce4']['suc']
             self.asserts=self.data['zhuce4']['assert']
             self.asser_return=self.res.register1(self.suc,self.user,self.password,self.yanzheng)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\appium-python3\jietu\zhuce\regst4.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst4.pang')
             time.sleep(1)
             self.assertEqual(self.asser_return,self.asserts,msg='fail resons:%s !=%s'%(self.asser_return,self.asserts))
         except Exception as e:
@@ -92,7 +95,7 @@ class Registe(unittest.TestCase):
             self.suc=self.data['zhuce5']['suc']
             self.asserts=self.data['zhuce5']['assert']
             self.asser_return=self.res.register1(self.suc,self.user,self.password,self.yanzheng)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\appium-python3\jietu\zhuce\regst5.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst5.pang')
             self.logs.info_log(('input data:name:%s,pwd:%s,yanzhengma:%s suc:%s,assert:%s' % (self.user, self.password, self.yanzheng,self.suc, self.asserts)))
 
             time.sleep(1)
@@ -108,7 +111,7 @@ class Registe(unittest.TestCase):
             self.suc=self.data['zhuce6']['suc']
             self.asserts=self.data['zhuce6']['assert']
             self.asser_return=self.res.register1(self.suc,self.user,self.password,self.yanzheng)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\appium-python3\jietu\zhuce\regst6.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst6.pang')
             self.logs.info_log(('input data:name:%s,pwd:%s,yanzhengma:%s suc:%s,assert:%s' % (self.user, self.password, self.yanzheng,self.suc, self.asserts)))
             time.sleep(1)
             self.assertEqual(self.asser_return,self.asserts,msg='fail resons:%s !=%s'%(self.asser_return,self.asserts))
@@ -123,7 +126,7 @@ class Registe(unittest.TestCase):
             self.suc=self.data['zhuce7']['suc']
             self.asserts=self.data['zhuce7']['assert']
             self.asser_return=self.res.register1(self.suc,self.user,self.password,self.yanzheng)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\appium-python3\jietu\zhuce\regst7.pang')
+            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\zhuce\regst7.pang')
             self.logs.info_log(('input data:name:%s,pwd:%s,yanzhengma:%s suc:%s,assert:%s' % (self.user, self.password, self.yanzheng,self.suc, self.asserts)))
             time.sleep(1)
             self.assertEqual(self.asser_return,self.asserts,msg='fail resons:%s !=%s'%(self.asser_return,self.asserts))

@@ -20,4 +20,4 @@ def report(path):
     re_open=open(report_dir,'wb')
     renner=HTMLTestRunner.HTMLTestRunner(stream=re_open,title=u'学生端测试',description=u'测试结果')
     renner.run(test_suit)
-report(r'C:\Users\Administrator\Desktop\appium-python3\case')
+report(r'C:\Users\Administrator\Desktop\xuesheng\case')

@@ -13,7 +13,7 @@ class logout:
     def __init__(self,deriver):
         self.deriver=deriver
         title='logout'
-        self.file=open(r'C:\Users\Administrator\Desktop\appium-python3\data\data_dingwei.yaml','r',encoding='utf-8')
+        self.file=open(r'C:\Users\Administrator\Desktop\xuesheng\data\data_dingwei.yaml','r',encoding='utf-8')
         self.data=yaml.load(self.file)
         self.file.close()
         self.shezhi=self.data['logut']['shezhi_id']
