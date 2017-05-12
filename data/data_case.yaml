@@ -3,22 +3,22 @@ login:
     username: '319197149@qq.com'
     password: 'leizi'
     suc: 1
-    assert: '账号或者密码错误'
+    assert: '登录'
   login2:
     username: ''
     password: 'leizi'
     suc: 1
-    assert: '账号不能为空'
+    assert: '登录'
   login3:
     username: 'leizi'
     password: ''
     suc: 1
-    assert: '密码不能为空'
+    assert: '登录'
   login4:
     username: 'lei zi'
     password: '12'
     suc: 1
-    assert: '账号输入错误'
+    assert: '登录'
   login5:
     username: '15964636199'
     password: 'li930423'
@@ -39,89 +39,89 @@ login:
     username: '15964636199'
     password: 'li93042'
     suc: 1
-    assert: '账号或者密码错误'
+    assert: '登录'
   login9:
     username: '111270002'
     password: 'li90423'
     suc: 1
-    assert: '账号或者密码错误'
+    assert: '登录'
   login10:
     username: 'leiziasd'
     password: 'li93423'
     suc: 1
-    assert: '账号或者密码错误'
+    assert: '登录'
   login11:
     username: ''
     password: ''
     suc: 1
-    assert: '账号不能为空'
+    assert: '登录'
 zhuce:
   zhuce1:
     username: ''
     password: ''
     yanzhengma: ''
     suc: 1
-    assert: '请输入您的手机号/邮箱'
+    assert: '立即注册'
   zhuce2:
     username: 'li'
     password: ''
     yanzhengma: ''
     suc: 1
-    assert: '请输入密码'
+    assert: '立即注册'
   zhuce3:
     username: 'li'
     password: '32'
     yanzhengma: ''
     suc: 1
-    assert: '请输入8-16位字母数字组合密码'
+    assert: '立即注册'
   zhuce4:
     username: 'li'
     password: '33256563265565652'
     yanzhengma: ''
     suc: 1
-    assert: '请输入8-16位字母数字组合密码'
+    assert: '立即注册'
   zhuce5:
     username: 'li'
     password: 'li3325656326225565652'
     yanzhengma: ''
     suc: 1
-    assert: '请输入8-16位字母数字组合密码'
+    assert: '立即注册'
   zhuce6:
     username: 'li'
     password: '56563265565652'
     yanzhengma: ''
     suc: 1
-    assert: '请输入8-16位字母数字组合密码'
+    assert: '立即注册'
   zhuce7:
     username: 'li'
     password: 'li123235'
     yanzhengma: ''
     suc: 1
-    assert: '请输入验证码'
+    assert: '立即注册'
   zhuce8:
     username: 'li'
     password: 'li123235'
     yanzhengma: '11'
     suc: 1
-    assert: '您输入的手机号/邮箱格式不正确'
+    assert: '立即注册'
   zhuce9:
     username: '15964636199'
     password: 'li123235'
     yanzhengma: '11'
     suc: 1
-    assert: '手机号已被注册或已被绑定'
+    assert: '立即注册'
   zhuce10:
     username: '15964636199'
     password: 'li123235'
     yanzhengma: '11'
     suc: 1
-    assert: '验证码不正确！'
+    assert: '立即注册'
   zhuce11:
     username: '15964'
     password: 'li123235'
     yanzhengma: '11'
     suc: 1
-    assert: '您输入的手机号/邮箱格式不正确'
+    assert: '立即注册'
 logut:
   logut1:
     suc: 1

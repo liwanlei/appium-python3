@@ -4,7 +4,7 @@ denglu:
   username_id: 'com.aixuetang.online:id/et_username'
   password_id: 'com.aixuetang.online:id/et_password'
   login_btn_id: 'com.aixuetang.online:id/tv_login'
-  denglu_fail_id: 'com.aixuetang.online:id/tv_msg_tip'
+  denglu_fail_id: 'com.aixuetang.online:id/tv_login'
   denglu_sucesss_id: 'com.aixuetang.online:id/user_name'
 logut:
   shezhi_id: 'com.aixuetang.online:id/user_setting'
@@ -19,5 +19,5 @@ zhuce:
   zhuce_pass_id: 'com.aixuetang.online:id/et_password'
   yanzhengma_id: 'com.aixuetang.online:id/et_code'
   huoquyanzhengma_id: 'com.aixuetang.online:id/tv_code'
-  fail_id: 'com.aixuetang.online:id/tv_msg_tip'
+  fail_id: 'com.aixuetang.online:id/tv_register'
   zhuce_btn: 'com.aixuetang.online:id/tv_register'

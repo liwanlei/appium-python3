@@ -22,29 +22,21 @@ class Login:
         self.login_fail=self.data['denglu']['denglu_fail_id']
         self.login_sucess=self.data['denglu']['denglu_sucesss_id']
     def login(self,suc,name,password):
-        try:
-            time.sleep(6)
-            self.deriver.find_elements_by_id(self.herenzhongxin)[2].click()
-            time.sleep(3)
-            self.deriver.find_element_by_id(self.logi).click()
-            time.sleep(1)
-            userna=self.deriver.find_element_by_id(self.username)
-            userna.clear()
-            userna.send_keys(name)
-            passwor=self.deriver.find_element_by_id(self.password)
-            passwor.clear()
-            passwor.send_keys(password)
-            if suc == 1:
-                self.deriver.find_element_by_id(self.log_btn).click()
-                self.login_fai=self.deriver.find_element_by_id(self.login_fail).text
-                return self.login_fai
-            if suc==0:
-                self.deriver.find_element_by_id(self.log_btn).click()
-                self.login_suc=self.deriver.find_element_by_id(self.login_sucess).text
-                return self.login_suc
-        except Exception as e:
-            print(e)
-        finally:
-            self.deriver.quit()
+        self.deriver.find_elements_by_id(self.herenzhongxin)[2].click()
+        self.deriver.find_element_by_id(self.logi).click()
+        userna=self.deriver.find_element_by_id(self.username)
+        userna.clear()
+        userna.send_keys(name)
+        passwor=self.deriver.find_element_by_id(self.password)
+        passwor.clear()
+        passwor.send_keys(password)
+        if suc == 1:
+            self.deriver.find_element_by_id(self.log_btn).click()
+            self.login_fai=self.deriver.find_element_by_id(self.login_fail).text
+            return self.login_fai
+        if suc==0:
+            self.deriver.find_element_by_id(self.log_btn).click()
+            self.login_suc=self.deriver.find_element_by_id(self.login_sucess).text
+            return self.login_suc
 if __name__ =='__main__':
     Login(deriver=webdriver)
