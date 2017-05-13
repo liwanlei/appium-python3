@@ -21,7 +21,7 @@ def report(path):
     renner=HTMLTestRunner.HTMLTestRunner(stream=re_open,title=u'学生端测试',description=u'测试结果')
     renner.run(test_suit)
 if __name__=="__main__":
-    report(r'C:\Users\Administrator\Desktop\xuesheng\case')
+    report(r'..\case')
     from report.email_send import create_report_sendemali
     create_report_sendemali('leileili126@163.com','liwanlei930423','952943386@qq.com')
 

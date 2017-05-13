@@ -18,7 +18,7 @@ def create_report_sendemali(from_addr,password,mail_to):
     msg['From'] = from_addr
     msg['to'] = '952943386@qq.com'
     msg['Date'] = time.strftime('%a, %d %b %Y %H:%M:%S %z')
-    report_obj = open(r'C:\Users\Administrator\Desktop\xuesheng\report\xueshang.html', 'rb')
+    report_obj = open(r'C:\Users\Administrator\Desktop\appium-python\report\xueshang.html', 'rb')
     mail_body_value = report_obj.read()
     mail_body = mail_body_value
     # 创建附件，并添加到msg

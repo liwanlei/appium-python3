@@ -13,7 +13,7 @@ class logout:
     def __init__(self,deriver):
         self.deriver=deriver
         title='logout'
-        self.file=open(r'C:\Users\Administrator\Desktop\xuesheng\data\data_dingwei.yaml','r',encoding='utf-8')
+        self.file=open(r'..\data\data_dingwei.yaml','r',encoding='utf-8')
         self.data=yaml.load(self.file)
         self.file.close()
         self.shezhi=self.data['logut']['shezhi_id']
@@ -21,18 +21,6 @@ class logout:
         self.logut_suc=self.data['logut']['logut_sucess']
         self.logut_fail=self.data['logut']['logut_fail']
         self.logs=Logger(title)
-    def logou(self,suc):
-        try:
+    def lohout(self):
             self.deriver.find_element_by_id(self.shezhi).click()
             self.deriver.find_element_by_id(self.logut).click()
-            if suc ==1:
-                self.text_fail=self.deriver.find_element_by_id(self.logut_fail).text
-                return self.text_fail
-            if suc==0:
-                self.text_suc=self.deriver.find_element_by_id(self.logut_suc).text
-                return self.text_suc
-        except Exception as e:
-            self.logs.error_log(e)
-            print(e)
-        finally:
-            self.deriver.quit()

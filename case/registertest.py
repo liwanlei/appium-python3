@@ -18,12 +18,12 @@ class Registe(unittest.TestCase):
         self.dis_app['deviceName'] = '127.0.0.1:62001'
         self.dis_app['appPackage'] = 'com.aixuetang.online'
         self.dis_app['appActivity'] = 'com.aixuetang.mobile.activities.HomeActivity'
-        self.dis_app['androidDeviceReadyTimeout']=30
-        self.dis_app['unicodeKeyboard']=True
-        self.dis_app['resetKeyboard']=True
+        self.dis_app['androidDeviceReadyTimeout']=60
+        # self.dis_app['unicodeKeyboard']=True
+        # self.dis_app['resetKeyboard']=True
         self.deriver = webdriver.Remote('http://localhost:4723/wd/hub', self.dis_app)
         time.sleep(10)
-        self.faile=open(r'C:\Users\Administrator\Desktop\xuesheng\data\data_case.yaml','r',encoding='utf-8')
+        self.faile=open(r'..\data\data_case.yaml','r',encoding='utf-8')
         self.data=yaml.load(self.faile)
         self.faile.close()
         self.data=self.data['zhuce']

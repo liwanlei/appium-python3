@@ -19,11 +19,11 @@ class Logintest(unittest.TestCase):
         self.dis_app['appPackage'] = 'com.aixuetang.online'
         self.dis_app['appActivity'] = 'com.aixuetang.mobile.activities.HomeActivity'
         self.dis_app['androidDeviceReadyTimeout']=30
-        self.dis_app['unicodeKeyboard']=True
-        self.dis_app['resetKeyboard']=True
+        # self.dis_app['unicodeKeyboard']=True
+        # self.dis_app['resetKeyboard']=True
         self.deriver = webdriver.Remote('http://localhost:4723/wd/hub', self.dis_app)
         time.sleep(10)
-        self.faile=open(r'C:\Users\Administrator\Desktop\xuesheng\data\data_case.yaml','r',encoding='utf-8')
+        self.faile=open(r'..\data\data_case.yaml','r',encoding='utf-8')
         self.data=yaml.load(self.faile)
         self.faile.close()
         self.logcan=Logger(title)
@@ -31,13 +31,14 @@ class Logintest(unittest.TestCase):
         self.logut=logout(self.deriver)
         self.logs=Login(self.deriver)
     def test_login_1(self):
+        '''密码错误'''
         try:
             self.user=self.data['login1']['username']
             self.passw = self.data['login1']['password']
             self.suc=self.data['login1']['suc']
             self.assert_v=self.data['login1']['assert']
             self.assert_return=self.logs.login(self.suc,self.user,self.passw)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\login1.pang')
+            self.deriver.get_screenshot_as_file(r'..\jietu\login1.pang')
             self.logcan.info_log('input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
             self.assertEqual(self.assert_v, self.assert_return,msg='fail resons:%s !=%s'%(self.assert_v,self.assert_return))
         except Exception as e:
@@ -50,7 +51,7 @@ class Logintest(unittest.TestCase):
             self.suc=self.data['login2']['suc']
             self.assert_v=self.data['login2']['assert']
             self.assert_return=self.logs.login(self.suc,self.user,self.passw)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\login2.pang')
+            self.deriver.get_screenshot_as_file(r'..\jietu\login2.pang')
             self.logcan.info_log('input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
             self.assertEqual(self.assert_v, self.assert_return,msg='fail resons:%s !=%s'%(self.assert_v,self.assert_return))
         except Exception as e:
@@ -65,7 +66,7 @@ class Logintest(unittest.TestCase):
             self.assert_return=self.logs.login(self.suc,self.user,self.passw)
             self.logcan.info_log(
                 'input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\login3.pang')
+            self.deriver.get_screenshot_as_file(r'..\jietu\login3.pang')
             self.assertEqual(self.assert_v, self.assert_return,msg='fail resons:%s !=%s'%(self.assert_v,self.assert_return))
         except Exception as e:
             self.logcan.error_log(u'失败原因：%s' % e)
@@ -77,7 +78,7 @@ class Logintest(unittest.TestCase):
             self.suc=self.data['login4']['suc']
             self.assert_v=self.data['login4']['assert']
             self.assert_return=self.logs.login(self.suc,self.user,self.passw)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\login4.pang')
+            self.deriver.get_screenshot_as_file(r'..\jietu\login4.pang')
             self.logcan.info_log('input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
             self.assertEqual(self.assert_v, self.assert_return,msg='fail resons:%s !=%s'%(self.assert_v,self.assert_return))
         except Exception as e:
@@ -90,7 +91,7 @@ class Logintest(unittest.TestCase):
             self.suc=self.data['login8']['suc']
             self.assert_v=self.data['login8']['assert']
             self.assert_return=self.logs.login(self.suc,self.user,self.passw)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\login8.pang')
+            self.deriver.get_screenshot_as_file(r'..\jietu\login8.pang')
             self.logcan.info_log(
                 'input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
             print('login1')
@@ -105,7 +106,7 @@ class Logintest(unittest.TestCase):
             self.suc=self.data['login9']['suc']
             self.assert_v=self.data['login9']['assert']
             self.assert_return=self.logs.login(self.suc,self.user,self.passw)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\login9.pang')
+            self.deriver.get_screenshot_as_file(r'..\jietu\login9.pang')
             self.logcan.info_log(
                 'input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
             self.assertEqual(self.assert_v, self.assert_return,msg='fail resons:%s !=%s'%(self.assert_v,self.assert_return))
@@ -119,7 +120,7 @@ class Logintest(unittest.TestCase):
             self.suc=self.data['login10']['suc']
             self.assert_v=self.data['login10']['assert']
             self.assert_return=self.logs.login(self.suc,self.user,self.passw)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\login710.pang')
+            self.deriver.get_screenshot_as_file(r'..\appium-python3\jietu\login710.pang')
             self.logcan.info_log(
                 'input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
             self.assertEqual(self.assert_v, self.assert_return,msg='fail resons:%s !=%s'%(self.assert_v,self.assert_return))
@@ -133,61 +134,61 @@ class Logintest(unittest.TestCase):
             self.suc=self.data['login11']['suc']
             self.assert_v=self.data['login11']['assert']
             self.assert_return=self.logs.login(self.suc,self.user,self.passw)
-            self.deriver.get_screenshot_as_file(r'C:\Users\Administrator\Desktop\xuesheng\jietu\login11.pang')
+            self.deriver.get_screenshot_as_file(r'..\jietu\login11.pang')
             self.logcan.info_log('input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
             self.assertEqual(self.assert_v, self.assert_return,msg='fail resons:%s !=%s'%(self.assert_v,self.assert_return))
         except Exception as e:
             self.logcan.error_log(u'失败原因：%s' % e)
             print('login11 fail,reson:%s'%e)
 
-    # def test_login_5(self):
-    #     try:
-    #         self.user = self.data['login5']['username']
-    #         self.passw = self.data['login5']['password']
-    #         self.suc = self.data['login5']['suc']
-    #         self.assert_v = self.data['login5']['assert']
-    #         self.assert_return = self.logs.login(self.suc, self.user, self.passw)
-    #         self.deriver.get_screenshot_as_file('C:\Users\Administrator\Desktop\xuesheng\jietu\login5.jpg')
-    #         self.logcan.info_log(s
-    #             'input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
-    #         self.assertEqual(self.assert_v, self.assert_return,
-    #                          msg='fail resons:%s !=%s' % (self.assert_v, self.assert_return))
-    #         self.logut.logou(0)
-    #     except Exception as e:
-    #         self.logcan.error_log(e)
-    #         print('login5 fail,reson:%s' % e)
-    #
-    # def test_login_6(self):
-    #     try:
-    #         self.user = self.data['login6']['username']
-    #         self.passw = self.data['login6']['password']
-    #         self.suc = self.data['login6']['suc']
-    #         self.assert_v = self.data['login6']['assert']
-    #         self.assert_return = self.logs.login(self.suc, self.user, self.passw)
-    #         self.deriver.get_screenshot_as_file('C:\Users\Administrator\Desktop\xuesheng\jietu\login6.pang')
-    #         self.logcan.info_log(
-    #             'input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
-    #         self.assertEqual(self.assert_v, self.assert_return)
-    #         self.logut.logou(0)
-    #     except Exception as e:
-    #         self.logcan.error_log(e)
-    #         print('login6 fail,reson:%s' % e)
-    #
-    # def test_login_7(self):
-    #     try:
-    #         self.user = self.data['login7']['username']
-    #         self.passw = self.data['login7']['password']
-    #         self.suc = self.data['login7']['suc']
-    #         self.assert_v = self.data['login7']['assert']
-    #         self.assert_return = self.logs.login(self.suc, self.user, self.passw)
-    #         self.deriver.get_screenshot_as_file('C:\Users\Administrator\Desktop\xuesheng\jietu\login7.pang')
-    #         self.logcan.info_log(
-    #             'input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
-    #         self.assertEqual(self.assert_v, self.assert_return,
-    #                          msg='fail resons:%s !=%s' % (self.assert_v, self.assert_return))
-    #         self.logut.logou(0)
-    #     except Exception as e:
-    #         self.logcan.error_log(e)
-    #         print('login7 fail,reson:%s' % e)
+    def test_login_5(self):
+        try:
+            self.user = self.data['login5']['username']
+            self.passw = self.data['login5']['password']
+            self.suc = self.data['login5']['suc']
+            self.assert_v = self.data['login5']['assert']
+            self.assert_return = self.logs.login(self.suc, self.user, self.passw)
+            self.deriver.get_screenshot_as_file(r'..\jietu\login5.jpg')
+            self.logcan.info_log(
+                'input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
+            self.assertEqual(self.assert_v, self.assert_return,
+                             msg='fail resons:%s !=%s' % (self.assert_v, self.assert_return))
+            self.logut.lohout()
+        except Exception as e:
+            self.logcan.error_log(e)
+            print('login5 fail,reson:%s' % e)
+
+    def test_login_6(self):
+        try:
+            self.user = self.data['login6']['username']
+            self.passw = self.data['login6']['password']
+            self.suc = self.data['login6']['suc']
+            self.assert_v = self.data['login6']['assert']
+            self.assert_return = self.logs.login(self.suc, self.user, self.passw)
+            self.deriver.get_screenshot_as_file(r'..\jietu\login6.pang')
+            self.logcan.info_log(
+                'input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
+            self.assertEqual(self.assert_v, self.assert_return)
+            self.logut.lohout()
+        except Exception as e:
+            self.logcan.error_log(e)
+            print('login6 fail,reson:%s' % e)
+
+    def test_login_7(self):
+        try:
+            self.user = self.data['login7']['username']
+            self.passw = self.data['login7']['password']
+            self.suc = self.data['login7']['suc']
+            self.assert_v = self.data['login7']['assert']
+            self.assert_return = self.logs.login(self.suc, self.user, self.passw)
+            self.deriver.get_screenshot_as_file(r'..\jietu\login7.pang')
+            self.logcan.info_log(
+                'input data:name:%s,pwd:%s, suc:%s,assert:%s' % (self.user, self.passw, self.suc, self.assert_v))
+            self.assertEqual(self.assert_v, self.assert_return,
+                             msg='fail resons:%s !=%s' % (self.assert_v, self.assert_return))
+            self.logut.lohout()
+        except Exception as e:
+            self.logcan.error_log(e)
+            print('login7 fail,reson:%s' % e)
     def tearDown(self):
         self.deriver.quit()

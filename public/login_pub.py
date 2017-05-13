@@ -11,7 +11,7 @@ import yaml,time
 class Login:
     def __init__(self,deriver):
         self.deriver=deriver
-        self.file=open(r'C:\Users\Administrator\Desktop\xuesheng\data\data_dingwei.yaml','r',encoding='utf-8')
+        self.file=open(r'\data\data_dingwei.yaml','r',encoding='utf-8')
         self.data=yaml.load(self.file)
         self.file.close()
         self.herenzhongxin=self.data['denglu']['weizhilan_id']
