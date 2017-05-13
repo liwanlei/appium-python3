@@ -139,13 +139,13 @@ class deriver_fengzhuang():
     def screet_wind(self):
         me=self.driver.get_screenshot_as_file()
         return me #返回 ture,flase
-    def get_wiow_size(self):
+    def get_wiow_size(self):#获取窗口大小
         return self.driver.get_window_size()
-    def fangda(self,element):
+    def fangda(self,element):#放大
         self.driver.zoom(element)
-    def suoxiao(self,element):
+    def suoxiao(self,element):#缩小
         self.driver.pinch(element)
-    def kuaisuhuadong(self,s_x,s_y,e_x,e_y):
+    def kuaisuhuadong(self,s_x,s_y,e_x,e_y):#从一点到另一点
         self.driver.flick(s_x,s_y,e_x,e_y)
     def huadong(self,s_x,s_y,e_x,e_y,duration=None):
         self.driver.swipe(s_x,s_y,e_x,e_y)

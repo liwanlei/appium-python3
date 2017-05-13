@@ -18,6 +18,7 @@ dis_app['resetKeyboard']=True
 dis_app['appActivity']='com.aixuetang.mobile.activities.HomeActivity'
 deriver=webdriver.Remote('http://localhost:4723/wd/hub',dis_app)
 time.sleep(10)
+
 try:
     print('chenggong')
     me=deriver_fengzhuang(deriver)
