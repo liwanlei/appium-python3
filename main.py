@@ -6,8 +6,9 @@
 @file: main.py
 @time: 2017/4/27 13:41
 """
-from report.repPorT import report
-from  report.email_send import create_report_sendemali
+from testsuite.repPorT import report
+import  os
 if __name__=="__main__":
-    report(r'C:\Users\Administrator\Desktop\appium-python3\case')
-    create_report_sendemali('leileili126@163.com','######','952943386@qq.com')
+    basepth=os.getcwd()
+    path=basepth+'\\testcase'
+    report(casepath=path)

@@ -8,6 +8,7 @@ import os,requests,threading
 from multiprocessing import Pool
 from time import  sleep
 import time
+from config.config import TestappActivity,TestappPackage
 class Initdevices:
     def __init__(self):
         self.get_android='adb devices'
@@ -19,12 +20,11 @@ class Initdevices:
             android={}
             s_value=str(v).replace("\n","").replace("\t","")
             if s_value.rfind('device') !=  -1 and (not s_value.startswith('List')) and s_value !='':
-                android['uid']=s_value[:s_value.find('device')].strip()
+                android['deviceName']=s_value[:s_value.find('device')].strip()
                 android['platformName'] = 'Android'
-                android['package'] = 'xxxx'
-                android['activity'] = 'xxxxxx'
+                android['package'] =TestappPackage
+                android['activity'] = TestappActivity
                 devices.append(android)
-
         # value = os.popen(self.GET_IOS)
         #
         # for v in value.readlines():
@@ -90,7 +90,7 @@ class appiumServer():
                 print('wait appium server all ready...')
                 time.sleep(1)
         print('appium server all ready')
-        '''log rizhi'''
+        '''testlog rizhi'''
         for run in self.devices:
             file = str(run.get_path() + '\\' + self._file) % run.get_port()
             with open(file, 'r') as f:

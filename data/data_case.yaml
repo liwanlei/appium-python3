@@ -123,8 +123,7 @@ zhuce:
     suc: 1
     assert: '立即注册'
 logut:
-  logut1:
-    suc: 1
+  logut1:suc: 1
     assert: 'Lipzig'
   logout2:
     suc: 0

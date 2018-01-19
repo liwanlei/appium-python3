@@ -6,12 +6,9 @@
 @file: zhuce_pub.py
 @time: 2017/4/27 12:49
 """
-from appium import  webdriver
 import yaml,time
-from log.log_case import Logger
 class Regust:
     def __init__(self,deriver):
-        title='zhuce'
         self.deriver=deriver
         self.file=open(r'..\data\data_dingwei.yaml','r',encoding='utf-8')
         self.data=yaml.load(self.file)
@@ -25,7 +22,6 @@ class Regust:
         self.yanzhengmahuo=self.data['zhuce']['huoquyanzhengma_id']
         self.regist_fail=self.data['zhuce']['fail_id']
         self.regest_btn=self.data['zhuce']['zhuce_btn']
-        self.logs=Logger(title)
     def register1(self,suc,user,password,yanzhengma):
         self.deriver.find_elements_by_id(self.regest_for)[2].click()
         self.deriver.find_element_by_id(self.regest_deng).click()
