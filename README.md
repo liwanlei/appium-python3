@@ -20,3 +20,21 @@
 ---------
 
 ## 3.效果展示图
+###  整体结构
+![Alt text](https://github.com/liwanlei/appium-python3/blob/master/img/zhutijiegou.png)
+###  运行后展示
+#### 控制台展示
+
+![Alt text](https://github.com/liwanlei/appium-python3/blob/master/img/yunxing.png)
+
+#### 测试日志
+
+![Alt text](https://github.com/liwanlei/appium-python3/blob/master/img/logrizhi.png)
+
+#### 测试报告
+
+
+![Alt text](https://github.com/liwanlei/appium-python3/blob/master/img/ceshibaogao.png)
+
+####  采集性能测试结果
+![Alt text](https://github.com/liwanlei/appium-python3/blob/master/img/caijixingneng.png)
