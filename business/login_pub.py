@@ -6,9 +6,11 @@
 @file: login_pub.py
 @time: 2017/4/27 9:03
 """
-from appium import  webdriver
 import yaml,time,os
 from untils.log import LOG,logger
+from untils.huoqu_xingneng import getnencun,liulang,caijicpu
+from untils.recording_txt import write_recording
+from config.config import TestappPackage
 class Login:
     def __init__(self,deriver):
         self.deriver=deriver
@@ -35,8 +37,16 @@ class Login:
         passwor=self.deriver.find_element_by_id(self.password)
         passwor.clear()
         passwor.send_keys(password)
+        path=os.getcwd()
+        pathw = path + '\\testpang\\%s.jpg' %(str(time.time())[:10])
         LOG.info('登陆参数输入完毕')
         self.deriver.find_element_by_id(self.log_btn).click()
+        neicun = getnencun(TestappPackage)
+        cpu = caijicpu(TestappPackage)
+        reserv, send, sum_app = liulang(TestappPackage)
+        write_recording(cpu=cpu,neicun=neicun,send=send,resever=reserv,sum_liulang=sum_app)
+        LOG.info('登录占内存:%s,cpu：%s,上传流量：%s，下载流量：%s,总计：%s'%(neicun,cpu,send,reserv,sum_app))
+        self.deriver.get_screenshot_as_file(pathw)
         time.sleep(5)
         if suc =='1' or suc==1:
             self.login_fai=self.deriver.find_element_by_id(self.login_fail).text

@@ -6,11 +6,16 @@
 @file: zhuce_pub.py
 @time: 2017/4/27 12:49
 """
-import yaml,time
+import yaml,time,os
+from untils.huoqu_xingneng import getnencun,liulang,caijicpu
+from config.config import TestappPackage
+from untils.log import LOG,logger
+from untils.recording_txt import write_recording
 class Regust:
     def __init__(self,deriver):
         self.deriver=deriver
-        self.file=open(r'..\data\data_dingwei.yaml','r',encoding='utf-8')
+        patth = os.getcwd()
+        self.file = open(patth + '\\data\\data_dingwei.yaml', 'r', encoding='utf-8')
         self.data=yaml.load(self.file)
         self.file.close()
         self.regest_for=self.data['zhuce']['zhuce_ye_id']
@@ -35,13 +40,22 @@ class Regust:
         yanzheng=self.deriver.find_element_by_id(self.yanzhengma)
         yanzheng.clear()
         yanzheng.send_keys(yanzhengma)
-        if suc =='1':
+        path = os.getcwd()
+        pathw = path + '\\testpang\\%s.jpg' % (str(time.time())[:10])
+        if suc =='1' or suc==1:
             self.deriver.find_element_by_id(self.regest_btn).click()
+            neicun = getnencun(TestappPackage)
+            cpu = caijicpu(TestappPackage)
+            reserv, send, sum_app = liulang(TestappPackage)
+            write_recording(cpu=cpu, neicun=neicun, send=send, resever=reserv, sum_liulang=sum_app)
+            LOG.info('注册占内存:%s,cpu：%s,上传流量：%s，下载流量：%s,总计：%s' % (neicun, cpu, send, reserv, sum_app))
+            self.deriver.get_screenshot_as_file(pathw)
             time.sleep(2)
-            self.text_fail=self.deriver.find_element_by_id(self.regist_fail).text()
-            return self.text_fail
+            self.text_fail=self.deriver.find_element_by_id(self.regist_fail)
+            self.rerun_test=self.text_fail.text
+            return self.rerun_test
         if suc ==0:
-            pass
+            self.deriver.get_screenshot_as_file(pathw)
     def register2(self,suc,user,password,yanzhengma):
         self.deriver.find_elements_by_id(self.regest_for)[2].click()
         self.deriver.find_element_by_id(self.regest_deng).click()
@@ -54,9 +68,18 @@ class Regust:
         passwor.send_keys(password)
         if suc ==1:
             self.deriver.find_element_by_id(self.yanzhengmahuo).click()
-            self.text_fail=self.deriver.find_element_by_id(self.regist_fail).text()
+            neicun = getnencun(TestappPackage)
+            cpu = caijicpu(TestappPackage)
+            reserv, send, sum_app = liulang(TestappPackage)
+            LOG.info('注册占内存:%s,cpu：%s,上传流量：%s，下载流量：%s,总计：%s' % (neicun, cpu, send, reserv, sum_app))
+            self.text_fail=self.deriver.find_element_by_id(self.regist_fail).text
         if suc ==0:
             yanzheng = self.deriver.find_element_by_id(self.yanzhengma)
             yanzheng.clear()
             yanzheng.send_keys(yanzhengma)
             self.deriver.find_element_by_id(self.regest_btn).click()
+            neicun = getnencun(TestappPackage)
+            cpu = caijicpu(TestappPackage)
+            reserv, send, sum_app = liulang(TestappPackage)
+            write_recording(cpu=cpu, neicun=neicun, send=send, resever=reserv, sum_liulang=sum_app)
+            LOG.info('注册占内存:%s,cpu：%s,上传流量：%s，下载流量：%s,总计：%s' % (neicun, cpu, send, reserv, sum_app))

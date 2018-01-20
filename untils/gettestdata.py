@@ -6,10 +6,10 @@
 import xlrd
 from untils.log import logger,LOG
 @logger('获取测试用例所需要的参数')
-def huoqu_test(filepath):
+def huoqu_test(filepath,index):
     try:
         file = xlrd.open_workbook(filepath)
-        me = file.sheets()[0]
+        me = file.sheets()[index]
         nrows = me.nrows
         listdata = []
         for i in range(1, nrows):
