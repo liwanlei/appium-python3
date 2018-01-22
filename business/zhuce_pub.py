@@ -7,7 +7,7 @@
 @time: 2017/4/27 12:49
 """
 import yaml,time,os
-from untils.huoqu_xingneng import getnencun,liulang,caijicpu
+from untils.huoqu_xingneng import getnencun,caijicpu
 from config.config import TestappPackage
 from untils.log import LOG,logger
 from untils.recording_txt import write_recording
@@ -46,9 +46,8 @@ class Regust:
             self.deriver.find_element_by_id(self.regest_btn).click()
             neicun = getnencun(TestappPackage)
             cpu = caijicpu(TestappPackage)
-            reserv, send, sum_app = liulang(TestappPackage)
-            write_recording(cpu=cpu, neicun=neicun, send=send, resever=reserv, sum_liulang=sum_app)
-            LOG.info('注册占内存:%s,cpu：%s,上传流量：%s，下载流量：%s,总计：%s' % (neicun, cpu, send, reserv, sum_app))
+            write_recording(cpu=cpu, neicun=neicun)
+            LOG.info('注册占内存:%s,cpu：%s' % (neicun, cpu))
             self.deriver.get_screenshot_as_file(pathw)
             time.sleep(2)
             self.text_fail=self.deriver.find_element_by_id(self.regist_fail)
@@ -70,8 +69,7 @@ class Regust:
             self.deriver.find_element_by_id(self.yanzhengmahuo).click()
             neicun = getnencun(TestappPackage)
             cpu = caijicpu(TestappPackage)
-            reserv, send, sum_app = liulang(TestappPackage)
-            LOG.info('注册占内存:%s,cpu：%s,上传流量：%s，下载流量：%s,总计：%s' % (neicun, cpu, send, reserv, sum_app))
+            LOG.info('注册占内存:%s,cpu：%s' % (neicun, cpu))
             self.text_fail=self.deriver.find_element_by_id(self.regist_fail).text
         if suc ==0:
             yanzheng = self.deriver.find_element_by_id(self.yanzhengma)
@@ -80,6 +78,5 @@ class Regust:
             self.deriver.find_element_by_id(self.regest_btn).click()
             neicun = getnencun(TestappPackage)
             cpu = caijicpu(TestappPackage)
-            reserv, send, sum_app = liulang(TestappPackage)
-            write_recording(cpu=cpu, neicun=neicun, send=send, resever=reserv, sum_liulang=sum_app)
-            LOG.info('注册占内存:%s,cpu：%s,上传流量：%s，下载流量：%s,总计：%s' % (neicun, cpu, send, reserv, sum_app))
+            write_recording(cpu=cpu, neicun=neicun)
+            LOG.info('注册占内存:%s,cpu：%s' % (neicun, cpu))

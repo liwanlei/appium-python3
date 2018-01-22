@@ -18,7 +18,6 @@ class Logintest(unittest.TestCase):
     def setUp(self):
         self.dis_app = make_dis()
         self.deriver = webdriver.Remote('http://localhost:4723/wd/hub', self.dis_app)
-        time.sleep(10)
         self.logs=Login(self.deriver)
         LOG.info('login测试用例开始执行')
     @ddt.data(*data_test)

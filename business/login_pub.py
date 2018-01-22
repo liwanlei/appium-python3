@@ -8,7 +8,7 @@
 """
 import yaml,time,os
 from untils.log import LOG,logger
-from untils.huoqu_xingneng import getnencun,liulang,caijicpu
+from untils.huoqu_xingneng import getnencun,caijicpu
 from untils.recording_txt import write_recording
 from config.config import TestappPackage
 class Login:
@@ -43,9 +43,8 @@ class Login:
         self.deriver.find_element_by_id(self.log_btn).click()
         neicun = getnencun(TestappPackage)
         cpu = caijicpu(TestappPackage)
-        reserv, send, sum_app = liulang(TestappPackage)
-        write_recording(cpu=cpu,neicun=neicun,send=send,resever=reserv,sum_liulang=sum_app)
-        LOG.info('登录占内存:%s,cpu：%s,上传流量：%s，下载流量：%s,总计：%s'%(neicun,cpu,send,reserv,sum_app))
+        write_recording(cpu=cpu,neicun=neicun)
+        LOG.info('登录占内存:%s,cpu：%s'%(neicun,cpu))
         self.deriver.get_screenshot_as_file(pathw)
         time.sleep(5)
         if suc =='1' or suc==1:

@@ -9,10 +9,10 @@ from untils.log import LOG,logger
 path=os.getcwd()
 now = time.strftime('%Y-%m-%d-%H-%M', time.localtime(time.time()))
 recording=path+'\\testreport\\%s.txt'%now
-def write_recording(cpu,neicun,send,resever,sum_liulang):
+def write_recording(cpu,neicun):
     try:
         with open(recording,'a',encoding='utf-8') as f:
-            m='cpu:%s,内存：%s，发送流量:%s,接受流量：%s，总计：%s'%(cpu,neicun,send,resever,sum_liulang)
+            m='cpu:%s,内存：%s'%(cpu,neicun)
             f.write(m+'\n')
             f.close()
     except Exception as e:

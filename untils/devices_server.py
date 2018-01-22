@@ -47,18 +47,12 @@ class Initdevices:
 
         return devices
 def is_using(port):
-    '''
-    判断端口号是否被占用
-    '''
     cmd='netstat -an | grep %s'%port
     if os.popen(cmd).realines():
         return  True
     else:
         return False
 def get_port(count):
-    '''
-    获取3456端口后一一列的free port
-    '''
     port=3456
     port_list=[]
     while True:

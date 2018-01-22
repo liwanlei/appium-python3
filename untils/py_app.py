@@ -164,4 +164,4 @@ class deriver_fengzhuang():
     def wait(self,seconde):
         self.driver.wait_activity(seconde)
     def send_key(self,pas):
-        self.deriver.send_keys(pas)
+        self.driver.send_keys(pas)
