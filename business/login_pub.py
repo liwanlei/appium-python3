@@ -1,13 +1,15 @@
 # encoding: utf-8
 """
 @author: lileilei
-@site: 
 @software: PyCharm
 @file: login_pub.py
 @time: 2017/4/27 9:03
 """
+'''
+登录测试
+'''
 import yaml,time,os
-from untils.log import LOG,logger
+from untils.log import LOG
 from untils.huoqu_xingneng import getnencun,caijicpu
 from untils.recording_txt import write_recording
 from config.config import TestappPackage

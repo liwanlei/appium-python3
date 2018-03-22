@@ -4,9 +4,6 @@
 @time: 2018/1/22 9:59 
 """
 import os
-import re
-import math
-from math import ceil
 import subprocess
 # 得到手机信息
 def get_phone_info(devices):

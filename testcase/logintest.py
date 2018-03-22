@@ -4,8 +4,10 @@
 @file: logintest.py
 @time: 2017/4/26 21:09
 '''
+'''登录测试用例
+才用ddt数据驱动'''
 from appium import webdriver
-import unittest,time,ddt,os
+import unittest,ddt,os
 from business.login_pub import Login
 from untils.log import LOG
 from untils.disapp import make_dis

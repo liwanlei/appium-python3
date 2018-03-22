@@ -5,9 +5,7 @@
 @time: 2017/4/26 21:02
 '''
 from email import encoders
-from email.header import Header
 from email.mime.text import MIMEText
-from email.utils import parseaddr, formataddr
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 import smtplib,time,os

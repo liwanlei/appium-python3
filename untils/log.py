@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Date    : 2017-10-14 15:35:17
 # @Author  : leizi
-import os
-import logbook
+'''日志相关'''
+import os,logbook
 from logbook.more import ColorizedStderrHandler
 from functools import wraps
 check_path='.'

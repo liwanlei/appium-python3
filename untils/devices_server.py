@@ -4,7 +4,7 @@
 @file: devices_server.py
 @time: 2017/5/1 15:45
 '''
-import os,requests,threading
+import os,requests
 from multiprocessing import Pool
 from time import  sleep
 import time

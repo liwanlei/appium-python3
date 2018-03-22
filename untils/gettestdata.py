@@ -3,6 +3,7 @@
 @file: ddd.py 
 @time: 2018/1/19 11:43 
 """
+'''从Excel获取测试用例相关数据'''
 import xlrd
 from untils.log import logger,LOG
 @logger('获取测试用例所需要的参数')

@@ -9,8 +9,9 @@
 import yaml,time,os
 from untils.huoqu_xingneng import getnencun,caijicpu
 from config.config import TestappPackage
-from untils.log import LOG,logger
+from untils.log import LOG
 from untils.recording_txt import write_recording
+'''注册相关的逻辑'''
 class Regust:
     def __init__(self,deriver):
         self.deriver=deriver

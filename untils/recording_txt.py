@@ -4,11 +4,13 @@
 @file: recording_txt.py 
 @time: 2018/1/20 13:01 
 """
+'''采集的性能测试数据存放在txt文档中'''
 import  os,time
 from untils.log import LOG,logger
 path=os.getcwd()
 now = time.strftime('%Y-%m-%d-%H-%M', time.localtime(time.time()))
 recording=path+'\\testreport\\%s.txt'%now
+@logger('记录当前的cpu占有率，内存')
 def write_recording(cpu,neicun):
     try:
         with open(recording,'a',encoding='utf-8') as f:

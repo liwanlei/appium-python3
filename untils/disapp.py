@@ -3,7 +3,12 @@
 @file: disapp.py 
 @time: 2018/1/19 11:10 
 """
+'''
+从配置文件获取相关的app测试配置信息
+'''
 from  config.config import *
+from  untils.log import LOG,logger
+@logger('开始从配置文件中获取测试相关的配置')
 def make_dis():
     dis_app={}
     dis_app['platformName'] = Testplatform

@@ -1,3 +1,4 @@
+'''关于appium的一个简单的封装'''
 class deriver_fengzhuang():
     def __init__(self,driver):
         self.driver=driver

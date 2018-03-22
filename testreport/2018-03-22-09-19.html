@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>学生端app UI自动化测试</title>
+    <meta name="generator" content="BSTestRunner 0.8.4"/>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    
+<style type="text/css" media="screen">
+
+/* -- css div popup ------------------------------------------------------------------------ */
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #99CCFF;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 10pt;
+    width: 1200px;
+}
+
+/* -- report ------------------------------------------------------------------------ */
+
+#show_detail_line .label {
+    font-size: 85%;
+    cursor: pointer;
+}
+
+#show_detail_line {
+    margin: 2em auto 1em auto;
+}
+
+#total_row  { font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+</style>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class="container">
+    <div class='heading'>
+<h1>学生端app UI自动化测试</h1>
+<p><strong>Start Time:</strong> 2018-03-22 09:19:10</p>
+<p><strong>Duration:</strong> 0:21:00.195024</p>
+<p><strong>Status:</strong> <span class="text text-success">Pass <strong>15</strong></span> <span class="text text-warning">Error <strong>7</strong></span></p>
+
+<p class='description'>自动化测试结果</p>
+</div>
+
+
+    
+<p id='show_detail_line'>
+<span class="label label-primary" onclick="showCase(0)">Summary</span>
+<span class="label label-danger" onclick="showCase(1)">Failed</span>
+<span class="label label-default" onclick="showCase(2)">All</span>
+</p>
+<table id='result_table' class="table">
+    <thead>
+        <tr id='header_row'>
+            <th>Test Group/Test case</td>
+            <th>Count</td>
+            <th>Pass</td>
+            <th>Fail</td>
+            <th>Error</td>
+            <th>View</td>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr class='text text-warning'>
+    <td>logintest.Logintest</td>
+    <td>11</td>
+    <td>4</td>
+    <td>0</td>
+    <td>7</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c1',11)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='text text-warning'><div class='testcase'>test_login_1</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: [2018-03-22 09:19:27.473949] INFO: appium: 获取元素的定位的信息
+[2018-03-22 09:19:27.503452] INFO: appium: 元素定位信息加载成功！！
+[2018-03-22 09:19:27.503452] INFO: appium: login测试用例开始执行
+[2018-03-22 09:19:29.598718] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Roaming\Python\Python36\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\Administrator\Desktop\xuesheng\appium-python3\testcase\logintest.py", line 29, in test_login
+    self.assert_return=self.logs.login(suc=self.suc,name=self.user,password=self.passw)
+  File "C:\Users\Administrator\Desktop\xuesheng\appium-python3\business\login_pub.py", line 31, in login
+    self.deriver.find_elements_by_id(self.herenzhongxin)[2].click()
+IndexError: list index out of range
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.2' class='none'>
+    <td class='text text-warning'><div class='testcase'>test_login_10</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        error</a>
+
+    <div id='div_ft1.2' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.2: [2018-03-22 09:20:01.722298] INFO: appium: 获取元素的定位的信息
+[2018-03-22 09:20:01.727298] INFO: appium: 元素定位信息加载成功！！
+[2018-03-22 09:20:01.727798] INFO: appium: login测试用例开始执行
+[2018-03-22 09:20:06.328382] INFO: appium: 进入登陆界面！！
+[2018-03-22 09:20:23.719091] INFO: appium: 登陆参数输入完毕
+[2018-03-22 09:20:31.061523] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:20:31.062023] INFO: appium: 全部kwargs参数信息 , {'cpu': '13%', 'neicun': '68M'}
+[2018-03-22 09:20:31.063523] INFO: appium: 登录占内存:68M,cpu：13%
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py:1007: UserWarning: name used for saved screenshot does not match file type. It should end with a `.png` extension
+  "type. It should end with a `.png` extension", UserWarning)
+[2018-03-22 09:20:44.975790] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Roaming\Python\Python36\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\Administrator\Desktop\xuesheng\appium-python3\testcase\logintest.py", line 29, in test_login
+    self.assert_return=self.logs.login(suc=self.suc,name=self.user,password=self.passw)
+  File "C:\Users\Administrator\Desktop\xuesheng\appium-python3\business\login_pub.py", line 51, in login
+    self.login_fai=self.deriver.find_element_by_id(self.login_fail).text
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 351, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 955, in find_element
+    'value': value})['value']
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 312, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\appium\webdriver\errorhandler.py", line 29, in check_response
+    raise wde
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\appium\webdriver\errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_login_11</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        pass</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: [2018-03-22 09:21:02.178975] INFO: appium: 获取元素的定位的信息
+[2018-03-22 09:21:02.183475] INFO: appium: 元素定位信息加载成功！！
+[2018-03-22 09:21:02.183475] INFO: appium: login测试用例开始执行
+[2018-03-22 09:21:06.404011] INFO: appium: 进入登陆界面！！
+[2018-03-22 09:21:23.608696] INFO: appium: 登陆参数输入完毕
+[2018-03-22 09:21:30.108021] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:21:30.108521] INFO: appium: 全部kwargs参数信息 , {'cpu': '25%', 'neicun': '68M'}
+[2018-03-22 09:21:30.109521] INFO: appium: 登录占内存:68M,cpu：25%
+[2018-03-22 09:21:36.016771] INFO: appium: 登录测试，传入参数:用户名：，密码：,返回结果：登录
+[2018-03-22 09:21:36.017271] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_login_2</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.4')" >
+        pass</a>
+
+    <div id='div_pt1.4' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.4: [2018-03-22 09:21:52.051808] INFO: appium: 获取元素的定位的信息
+[2018-03-22 09:21:52.055808] INFO: appium: 元素定位信息加载成功！！
+[2018-03-22 09:21:52.056308] INFO: appium: login测试用例开始执行
+[2018-03-22 09:21:56.001809] INFO: appium: 进入登陆界面！！
+[2018-03-22 09:22:12.504905] INFO: appium: 登陆参数输入完毕
+[2018-03-22 09:22:19.771828] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:22:19.771828] INFO: appium: 全部kwargs参数信息 , {'cpu': '29%', 'neicun': '68M'}
+[2018-03-22 09:22:19.772828] INFO: appium: 登录占内存:68M,cpu：29%
+[2018-03-22 09:22:25.856100] INFO: appium: 登录测试，传入参数:用户名：，密码：leizi,返回结果：登录
+[2018-03-22 09:22:25.856100] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_login_3</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.5')" >
+        pass</a>
+
+    <div id='div_pt1.5' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.5: [2018-03-22 09:22:44.615482] INFO: appium: 获取元素的定位的信息
+[2018-03-22 09:22:44.619483] INFO: appium: 元素定位信息加载成功！！
+[2018-03-22 09:22:44.619983] INFO: appium: login测试用例开始执行
+[2018-03-22 09:22:48.282948] INFO: appium: 进入登陆界面！！
+[2018-03-22 09:23:05.725663] INFO: appium: 登陆参数输入完毕
+[2018-03-22 09:23:12.243991] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:23:12.244491] INFO: appium: 全部kwargs参数信息 , {'cpu': '25%', 'neicun': '68M'}
+[2018-03-22 09:23:12.244991] INFO: appium: 登录占内存:68M,cpu：25%
+[2018-03-22 09:23:17.920712] INFO: appium: 登录测试，传入参数:用户名：leizi，密码：,返回结果：登录
+[2018-03-22 09:23:17.921212] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_login_4</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.6')" >
+        pass</a>
+
+    <div id='div_pt1.6' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.6: [2018-03-22 09:23:38.150280] INFO: appium: 获取元素的定位的信息
+[2018-03-22 09:23:38.154781] INFO: appium: 元素定位信息加载成功！！
+[2018-03-22 09:23:38.154781] INFO: appium: login测试用例开始执行
+[2018-03-22 09:23:43.296934] INFO: appium: 进入登陆界面！！
+[2018-03-22 09:24:00.874166] INFO: appium: 登陆参数输入完毕
+[2018-03-22 09:24:08.018573] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:24:08.019073] INFO: appium: 全部kwargs参数信息 , {'cpu': '26%', 'neicun': '68M'}
+[2018-03-22 09:24:08.019573] INFO: appium: 登录占内存:68M,cpu：26%
+[2018-03-22 09:24:13.707296] INFO: appium: 登录测试，传入参数:用户名：lei zi，密码：12,返回结果：登录
+[2018-03-22 09:24:13.707796] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.7' class='none'>
+    <td class='text text-warning'><div class='testcase'>test_login_5</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.7')" >
+        error</a>
+
+    <div id='div_ft1.7' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.7: [2018-03-22 09:24:31.523058] INFO: appium: 获取元素的定位的信息
+[2018-03-22 09:24:31.527558] INFO: appium: 元素定位信息加载成功！！
+[2018-03-22 09:24:31.527558] INFO: appium: login测试用例开始执行
+[2018-03-22 09:24:35.424053] INFO: appium: 进入登陆界面！！
+[2018-03-22 09:24:53.225814] INFO: appium: 登陆参数输入完毕
+[2018-03-22 09:25:00.257207] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:25:00.257707] INFO: appium: 全部kwargs参数信息 , {'cpu': '13%', 'neicun': '68M'}
+[2018-03-22 09:25:00.258207] INFO: appium: 登录占内存:68M,cpu：13%
+[2018-03-22 09:25:08.290727] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Roaming\Python\Python36\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\Administrator\Desktop\xuesheng\appium-python3\testcase\logintest.py", line 29, in test_login
+    self.assert_return=self.logs.login(suc=self.suc,name=self.user,password=self.passw)
+  File "C:\Users\Administrator\Desktop\xuesheng\appium-python3\business\login_pub.py", line 54, in login
+    self.login_suc=self.deriver.find_element_by_id(self.login_sucess).text
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 351, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 955, in find_element
+    'value': value})['value']
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 312, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\appium\webdriver\errorhandler.py", line 29, in check_response
+    raise wde
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\appium\webdriver\errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.8' class='none'>
+    <td class='text text-warning'><div class='testcase'>test_login_6</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.8')" >
+        error</a>
+
+    <div id='div_ft1.8' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.8: [2018-03-22 09:25:26.333018] INFO: appium: 获取元素的定位的信息
+[2018-03-22 09:25:26.337518] INFO: appium: 元素定位信息加载成功！！
+[2018-03-22 09:25:26.337518] INFO: appium: login测试用例开始执行
+[2018-03-22 09:25:31.344654] INFO: appium: 进入登陆界面！！
+[2018-03-22 09:25:48.929387] INFO: appium: 登陆参数输入完毕
+[2018-03-22 09:25:56.372332] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:25:56.372832] INFO: appium: 全部kwargs参数信息 , {'cpu': '11%', 'neicun': '68M'}
+[2018-03-22 09:25:56.373332] INFO: appium: 登录占内存:68M,cpu：11%
+[2018-03-22 09:26:08.923926] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Roaming\Python\Python36\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\Administrator\Desktop\xuesheng\appium-python3\testcase\logintest.py", line 29, in test_login
+    self.assert_return=self.logs.login(suc=self.suc,name=self.user,password=self.passw)
+  File "C:\Users\Administrator\Desktop\xuesheng\appium-python3\business\login_pub.py", line 54, in login
+    self.login_suc=self.deriver.find_element_by_id(self.login_sucess).text
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 351, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 955, in find_element
+    'value': value})['value']
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 312, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\appium\webdriver\errorhandler.py", line 29, in check_response
+    raise wde
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\appium\webdriver\errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.9' class='none'>
+    <td class='text text-warning'><div class='testcase'>test_login_7</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.9')" >
+        error</a>
+
+    <div id='div_ft1.9' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.9: [2018-03-22 09:26:26.203120] INFO: appium: 获取元素的定位的信息
+[2018-03-22 09:26:26.207121] INFO: appium: 元素定位信息加载成功！！
+[2018-03-22 09:26:26.207621] INFO: appium: login测试用例开始执行
+[2018-03-22 09:26:31.210756] INFO: appium: 进入登陆界面！！
+[2018-03-22 09:26:48.276423] INFO: appium: 登陆参数输入完毕
+[2018-03-22 09:26:55.656360] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:26:55.656861] INFO: appium: 全部kwargs参数信息 , {'cpu': '12%', 'neicun': '68M'}
+[2018-03-22 09:26:55.657361] INFO: appium: 登录占内存:68M,cpu：12%
+[2018-03-22 09:27:20.394002] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Roaming\Python\Python36\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\Administrator\Desktop\xuesheng\appium-python3\testcase\logintest.py", line 29, in test_login
+    self.assert_return=self.logs.login(suc=self.suc,name=self.user,password=self.passw)
+  File "C:\Users\Administrator\Desktop\xuesheng\appium-python3\business\login_pub.py", line 54, in login
+    self.login_suc=self.deriver.find_element_by_id(self.login_sucess).text
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 351, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 955, in find_element
+    'value': value})['value']
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 312, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\appium\webdriver\errorhandler.py", line 29, in check_response
+    raise wde
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\appium\webdriver\errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.10' class='none'>
+    <td class='text text-warning'><div class='testcase'>test_login_8</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.10')" >
+        error</a>
+
+    <div id='div_ft1.10' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.10: [2018-03-22 09:27:38.879849] INFO: appium: 获取元素的定位的信息
+[2018-03-22 09:27:38.884350] INFO: appium: 元素定位信息加载成功！！
+[2018-03-22 09:27:38.884350] INFO: appium: login测试用例开始执行
+[2018-03-22 09:27:42.434801] INFO: appium: 进入登陆界面！！
+[2018-03-22 09:27:59.078914] INFO: appium: 登陆参数输入完毕
+[2018-03-22 09:28:06.864903] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:28:06.864903] INFO: appium: 全部kwargs参数信息 , {'cpu': '10%', 'neicun': '68M'}
+[2018-03-22 09:28:06.865903] INFO: appium: 登录占内存:68M,cpu：10%
+[2018-03-22 09:28:14.755405] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Roaming\Python\Python36\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\Administrator\Desktop\xuesheng\appium-python3\testcase\logintest.py", line 29, in test_login
+    self.assert_return=self.logs.login(suc=self.suc,name=self.user,password=self.passw)
+  File "C:\Users\Administrator\Desktop\xuesheng\appium-python3\business\login_pub.py", line 51, in login
+    self.login_fai=self.deriver.find_element_by_id(self.login_fail).text
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 351, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 955, in find_element
+    'value': value})['value']
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 312, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\appium\webdriver\errorhandler.py", line 29, in check_response
+    raise wde
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\appium\webdriver\errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.11' class='none'>
+    <td class='text text-warning'><div class='testcase'>test_login_9</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.11')" >
+        error</a>
+
+    <div id='div_ft1.11' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.11: [2018-03-22 09:28:32.084105] INFO: appium: 获取元素的定位的信息
+[2018-03-22 09:28:32.088606] INFO: appium: 元素定位信息加载成功！！
+[2018-03-22 09:28:32.088606] INFO: appium: login测试用例开始执行
+[2018-03-22 09:28:35.874086] INFO: appium: 进入登陆界面！！
+[2018-03-22 09:28:52.464193] INFO: appium: 登陆参数输入完毕
+[2018-03-22 09:29:00.090162] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:29:00.090662] INFO: appium: 全部kwargs参数信息 , {'cpu': '10%', 'neicun': '68M'}
+[2018-03-22 09:29:00.091162] INFO: appium: 登录占内存:68M,cpu：10%
+[2018-03-22 09:29:09.028297] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Roaming\Python\Python36\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\Administrator\Desktop\xuesheng\appium-python3\testcase\logintest.py", line 29, in test_login
+    self.assert_return=self.logs.login(suc=self.suc,name=self.user,password=self.passw)
+  File "C:\Users\Administrator\Desktop\xuesheng\appium-python3\business\login_pub.py", line 51, in login
+    self.login_fai=self.deriver.find_element_by_id(self.login_fail).text
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 351, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 955, in find_element
+    'value': value})['value']
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 312, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\appium\webdriver\errorhandler.py", line 29, in check_response
+    raise wde
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\appium\webdriver\errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='text text-success'>
+    <td>regtest.Registe</td>
+    <td>11</td>
+    <td>11</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c2',11)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>testreg_1</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: [2018-03-22 09:29:26.230981] INFO: appium: register测试用例开始执行
+[2018-03-22 09:30:01.686983] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:30:01.687483] INFO: appium: 全部kwargs参数信息 , {'cpu': '21%', 'neicun': '69M'}
+[2018-03-22 09:30:01.687983] INFO: appium: 注册占内存:69M,cpu：21%
+[2018-03-22 09:30:04.263811] INFO: appium: 测试用例：reg1,输入参数:name:,pwd:,yanzhengma: suc:1,assert:立即注册
+[2018-03-22 09:30:05.264438] INFO: appium: register测试用例清空测试环境操作中
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>testreg_10</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.2')" >
+        pass</a>
+
+    <div id='div_pt2.2' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.2: [2018-03-22 09:30:23.922807] INFO: appium: register测试用例开始执行
+[2018-03-22 09:31:00.826993] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:31:00.826993] INFO: appium: 全部kwargs参数信息 , {'cpu': '21%', 'neicun': '69M'}
+[2018-03-22 09:31:00.827993] INFO: appium: 注册占内存:69M,cpu：21%
+[2018-03-22 09:31:03.609346] INFO: appium: 测试用例：reg10,输入参数:name:li,pwd:33256563265565652,yanzhengma: suc:1,assert:立即注册
+[2018-03-22 09:31:04.609473] INFO: appium: register测试用例清空测试环境操作中
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.3' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>testreg_11</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.3')" >
+        pass</a>
+
+    <div id='div_pt2.3' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.3: [2018-03-22 09:31:23.370856] INFO: appium: register测试用例开始执行
+[2018-03-22 09:32:02.273296] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:32:02.273796] INFO: appium: 全部kwargs参数信息 , {'cpu': '21%', 'neicun': '69M'}
+[2018-03-22 09:32:02.274296] INFO: appium: 注册占内存:69M,cpu：21%
+[2018-03-22 09:32:04.923632] INFO: appium: 测试用例：reg11,输入参数:name:li,pwd:li3325656326225565652,yanzhengma: suc:1,assert:立即注册
+[2018-03-22 09:32:05.923759] INFO: appium: register测试用例清空测试环境操作中
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.4' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>testreg_2</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.4')" >
+        pass</a>
+
+    <div id='div_pt2.4' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.4: [2018-03-22 09:32:29.174212] INFO: appium: register测试用例开始执行
+[2018-03-22 09:33:06.149407] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:33:06.149907] INFO: appium: 全部kwargs参数信息 , {'cpu': '23%', 'neicun': '69M'}
+[2018-03-22 09:33:06.150407] INFO: appium: 注册占内存:69M,cpu：23%
+[2018-03-22 09:33:08.725234] INFO: appium: 测试用例：reg2,输入参数:name:li,pwd:,yanzhengma: suc:1,assert:立即注册
+[2018-03-22 09:33:09.725861] INFO: appium: register测试用例清空测试环境操作中
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.5' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>testreg_3</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.5')" >
+        pass</a>
+
+    <div id='div_pt2.5' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.5: [2018-03-22 09:33:27.327096] INFO: appium: register测试用例开始执行
+[2018-03-22 09:34:04.283289] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:34:04.283289] INFO: appium: 全部kwargs参数信息 , {'cpu': '25%', 'neicun': '68M'}
+[2018-03-22 09:34:04.284289] INFO: appium: 注册占内存:68M,cpu：25%
+[2018-03-22 09:34:06.848115] INFO: appium: 测试用例：reg3,输入参数:name:15964,pwd:li123235,yanzhengma:11 suc:1,assert:立即注册
+[2018-03-22 09:34:07.848742] INFO: appium: register测试用例清空测试环境操作中
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.6' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>testreg_4</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.6')" >
+        pass</a>
+
+    <div id='div_pt2.6' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.6: [2018-03-22 09:34:25.511985] INFO: appium: register测试用例开始执行
+[2018-03-22 09:35:04.261905] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:35:04.261905] INFO: appium: 全部kwargs参数信息 , {'cpu': '20%', 'neicun': '69M'}
+[2018-03-22 09:35:04.262906] INFO: appium: 注册占内存:69M,cpu：20%
+[2018-03-22 09:35:06.964749] INFO: appium: 测试用例：reg4,输入参数:name:15964636199,pwd:li123235,yanzhengma:11 suc:1,assert:立即注册
+[2018-03-22 09:35:07.964876] INFO: appium: register测试用例清空测试环境操作中
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.7' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>testreg_5</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.7')" >
+        pass</a>
+
+    <div id='div_pt2.7' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.7: [2018-03-22 09:35:25.235569] INFO: appium: register测试用例开始执行
+[2018-03-22 09:36:02.450795] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:36:02.451295] INFO: appium: 全部kwargs参数信息 , {'cpu': '20%', 'neicun': '69M'}
+[2018-03-22 09:36:02.452295] INFO: appium: 注册占内存:69M,cpu：20%
+[2018-03-22 09:36:05.066627] INFO: appium: 测试用例：reg5,输入参数:name:li,pwd:32,yanzhengma: suc:1,assert:立即注册
+[2018-03-22 09:36:06.066754] INFO: appium: register测试用例清空测试环境操作中
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.8' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>testreg_6</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.8')" >
+        pass</a>
+
+    <div id='div_pt2.8' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.8: [2018-03-22 09:36:23.427458] INFO: appium: register测试用例开始执行
+[2018-03-22 09:37:01.965852] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:37:01.965852] INFO: appium: 全部kwargs参数信息 , {'cpu': '21%', 'neicun': '69M'}
+[2018-03-22 09:37:01.966852] INFO: appium: 注册占内存:69M,cpu：21%
+[2018-03-22 09:37:04.534678] INFO: appium: 测试用例：reg6,输入参数:name:15964636199,pwd:li123235,yanzhengma:11 suc:1,assert:立即注册
+[2018-03-22 09:37:05.535305] INFO: appium: register测试用例清空测试环境操作中
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.9' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>testreg_7</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.9')" >
+        pass</a>
+
+    <div id='div_pt2.9' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.9: [2018-03-22 09:37:24.088161] INFO: appium: register测试用例开始执行
+[2018-03-22 09:38:04.680316] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:38:04.680316] INFO: appium: 全部kwargs参数信息 , {'cpu': '21%', 'neicun': '69M'}
+[2018-03-22 09:38:04.681316] INFO: appium: 注册占内存:69M,cpu：21%
+[2018-03-22 09:38:07.269144] INFO: appium: 测试用例：reg7,输入参数:name:li,pwd:li123235,yanzhengma:11 suc:1,assert:立即注册
+[2018-03-22 09:38:08.269271] INFO: appium: register测试用例清空测试环境操作中
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.10' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>testreg_8</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.10')" >
+        pass</a>
+
+    <div id='div_pt2.10' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.10: [2018-03-22 09:38:25.657980] INFO: appium: register测试用例开始执行
+[2018-03-22 09:39:04.649931] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:39:04.650431] INFO: appium: 全部kwargs参数信息 , {'cpu': '21%', 'neicun': '69M'}
+[2018-03-22 09:39:04.651431] INFO: appium: 注册占内存:69M,cpu：21%
+[2018-03-22 09:39:07.254762] INFO: appium: 测试用例：reg8,输入参数:name:li,pwd:li123235,yanzhengma: suc:1,assert:立即注册
+[2018-03-22 09:39:08.255889] INFO: appium: register测试用例清空测试环境操作中
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.11' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>testreg_9</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.11')" >
+        pass</a>
+
+    <div id='div_pt2.11' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.11: [2018-03-22 09:39:25.902630] INFO: appium: register测试用例开始执行
+[2018-03-22 09:40:03.972464] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-03-22 09:40:03.972964] INFO: appium: 全部kwargs参数信息 , {'cpu': '20%', 'neicun': '68M'}
+[2018-03-22 09:40:03.973964] INFO: appium: 注册占内存:68M,cpu：20%
+[2018-03-22 09:40:06.624801] INFO: appium: 测试用例：reg9,输入参数:name:li,pwd:56563265565652,yanzhengma: suc:1,assert:立即注册
+[2018-03-22 09:40:07.624928] INFO: appium: register测试用例清空测试环境操作中
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+    </tbody>
+    <tfoot>
+        <tr id='total_row'>
+            <td>Total</td>
+            <td>22</td>
+            <td class="text text-success">15</td>
+            <td class="text text-danger">0</td>
+            <td class="text text-warning">7</td>
+            <td>&nbsp;</td>
+        </tr>
+    </tfoot>
+</table>
+
+    <div id='ending'>&nbsp;</div>
+</div>
+
+</body>
+</html>
