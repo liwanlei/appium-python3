@@ -1,0 +1,47 @@
+[2018-04-17 17:18:03.430216] INFO: appium: UI自动化相关测试开始执行
+[2018-04-17 17:18:03.644744] INFO: appium: 当前模块 获取测试用例所需要的参数
+[2018-04-17 17:18:03.645244] INFO: appium: 全部kwargs参数信息 , {'index': 0}
+[2018-04-17 17:18:03.661246] INFO: appium: 测试报告路径为：C:\Users\Administrator\Desktop\xuesheng\appium-python3\testreport\2018-04-17-17-18.html
+[2018-04-17 17:18:03.663246] INFO: appium: 当前模块 开始从配置文件中获取测试相关的配置
+[2018-04-17 17:18:03.663746] INFO: appium: 全部kwargs参数信息 , {}
+[2018-04-17 17:18:18.135584] INFO: appium: 当前模块 登录测试函数
+[2018-04-17 17:18:18.136084] INFO: appium: 全部kwargs参数信息 , {}
+[2018-04-17 17:18:18.136084] INFO: appium: 当前模块 解析测试步骤
+[2018-04-17 17:18:18.136584] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3'}
+[2018-04-17 17:18:18.136584] INFO: appium: login测试用例开始执行
+[2018-04-17 17:18:18.137084] INFO: appium: 当前模块 登录测试函数
+[2018-04-17 17:18:18.137084] INFO: appium: 全部kwargs参数信息 , {'deriver': <appium.webdriver.webdriver.WebDriver (session="1835e3f5-fac8-4848-bb9f-21c7c671f6ad")>, 'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-04-17 17:18:18.137084] INFO: appium: 当前模块 解析测试步骤
+[2018-04-17 17:18:18.137584] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-04-17 17:18:18.137584] INFO: appium: 当前模块 解析yaml文件
+[2018-04-17 17:18:18.138084] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-04-17 17:18:23.835808] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+[2018-04-17 17:18:42.043120] INFO: appium: 当前模块 开始从配置文件中获取测试相关的配置
+[2018-04-17 17:18:42.043120] INFO: appium: 全部kwargs参数信息 , {}
+[2018-04-17 17:18:55.948385] INFO: appium: 当前模块 登录测试函数
+[2018-04-17 17:18:55.948385] INFO: appium: 全部kwargs参数信息 , {}
+[2018-04-17 17:18:55.948885] INFO: appium: 当前模块 解析测试步骤
+[2018-04-17 17:18:55.948885] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3'}
+[2018-04-17 17:18:55.949385] INFO: appium: login测试用例开始执行
+[2018-04-17 17:18:55.949385] INFO: appium: 当前模块 登录测试函数
+[2018-04-17 17:18:55.949886] INFO: appium: 全部kwargs参数信息 , {'deriver': <appium.webdriver.webdriver.WebDriver (session="04976f61-a7a2-473a-b835-e50be4347538")>, 'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-04-17 17:18:55.949886] INFO: appium: 当前模块 解析测试步骤
+[2018-04-17 17:18:55.950386] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-04-17 17:18:55.950386] INFO: appium: 当前模块 解析yaml文件
+[2018-04-17 17:18:55.950886] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-04-17 17:19:02.529721] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+[2018-04-17 17:19:21.344110] INFO: appium: 当前模块 开始从配置文件中获取测试相关的配置
+[2018-04-17 17:19:21.344610] INFO: appium: 全部kwargs参数信息 , {}
+[2018-04-17 17:19:35.927962] INFO: appium: 当前模块 登录测试函数
+[2018-04-17 17:19:35.927962] INFO: appium: 全部kwargs参数信息 , {}
+[2018-04-17 17:19:35.928462] INFO: appium: 当前模块 解析测试步骤
+[2018-04-17 17:19:35.928462] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3'}
+[2018-04-17 17:19:35.928462] INFO: appium: login测试用例开始执行
+[2018-04-17 17:19:35.928962] INFO: appium: 当前模块 登录测试函数
+[2018-04-17 17:19:35.928962] INFO: appium: 全部kwargs参数信息 , {'deriver': <appium.webdriver.webdriver.WebDriver (session="fe8b71f8-3f87-4ca2-a10a-2dfa9c6c42c2")>, 'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-04-17 17:19:35.929462] INFO: appium: 当前模块 解析测试步骤
+[2018-04-17 17:19:35.929462] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-04-17 17:19:35.929962] INFO: appium: 当前模块 解析yaml文件
+[2018-04-17 17:19:35.929962] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-04-17 17:19:41.553176] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+[2018-04-17 17:19:59.869502] INFO: appium: UI自动化相关测试执行完毕！

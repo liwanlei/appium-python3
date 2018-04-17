@@ -4,7 +4,7 @@ class deriver_fengzhuang():
         self.driver=driver
     def  find_ele(self,fangfa,lujing):
         if fangfa=='id':
-            se=self.driver.find_element_by_id(lujing)
+            se=self.driver.find_elements_by_id(lujing)
         elif fangfa == 'xpath':
             se=self.driver.find_element_by_xpath(lujing)
         elif fangfa== 'css':
@@ -27,30 +27,33 @@ class deriver_fengzhuang():
             raise NameError('no element,please send tag,xpath,text,id,css,id,tag')
         return se
     def find_elemens(self, fangfa, lujing):
-        if fangfa == 'id':
-            se=self.driver.find_elements_by_id(lujing)
-        elif fangfa == 'xpath':
-            se=self.driver.find_elements_by_xpath(lujing)
-        elif fangfa == 'css':
-            se=self.driver.find_elements_by_css_selector(lujing)
-        elif fangfa == 'and':
-            se=self.driver.find_elements_by_android_uiautomator(
-                'new Uiselector().%s' % lujing)  # 这里在使用的时候比如使用text，那么这里的lujing为text('123')
-        elif fangfa == 'class':
-            se=self.driver.find_elements_by_class_name(lujing)
-        elif fangfa == 'name':
-            se=self.driver.find_elements_by_name(lujing)
-        elif fangfa == 'acces':
-            se=self.driver.find_elements_by_accessibility_id(lujing)
-        elif fangfa == 'text':
-            se=self.driver.find_elements_by_link_text(lujing)
-        elif fangfa == 'partial':
-            se=self.driver.find_elements_by_partial_link_text(lujing)
-        elif fangfa == 'tag':
-            se=self.driver.find_elements_by_tag_name(lujing)
-        else:
-            raise NameError('no element,please send tag,xpath,text,id,css,id,tag')
-        return se
+        try:
+            if fangfa == 'id':
+                se=self.driver.find_elements_by_id(lujing)
+            elif fangfa == 'xpath':
+                se=self.driver.find_elements_by_xpath(lujing)
+            elif fangfa == 'css':
+                se=self.driver.find_elements_by_css_selector(lujing)
+            elif fangfa == 'and':
+                se=self.driver.find_elements_by_android_uiautomator(
+                    'new Uiselector().%s' % lujing)  # 这里在使用的时候比如使用text，那么这里的lujing为text('123')
+            elif fangfa == 'class':
+                se=self.driver.find_elements_by_class_name(lujing)
+            elif fangfa == 'name':
+                se=self.driver.find_elements_by_name(lujing)
+            elif fangfa == 'acces':
+                se=self.driver.find_elements_by_accessibility_id(lujing)
+            elif fangfa == 'text':
+                se=self.driver.find_elements_by_link_text(lujing)
+            elif fangfa == 'partial':
+                se=self.driver.find_elements_by_partial_link_text(lujing)
+            elif fangfa == 'tag':
+                se=self.driver.find_elements_by_tag_name(lujing)
+            else:
+                raise NameError('no element,please send tag,xpath,text,id,css,id,tag')
+            return se
+        except Exception as e:
+            return e
     def ins(self,path):#安装app
         self.driver.install_app(path)
     def rem(self,baoming):#卸载app
