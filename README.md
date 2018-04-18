@@ -9,16 +9,16 @@
 ###  测试报告使用BSTestRunner进行测试用例完成后测试报告的生成。
 ### 依赖第三方包见requirements.txt。
 ##   2.目录简介：
-###      a.business：业务相关的处理
-###      b.config：配置相关
-###      c.data：业务相关，yaml文件存储功能定位相关的，用例采用Excel管理。
-###      d.testcase：测试用例模块
-###      c.testlog:测试过程中的测试日志
-###      d.testpang:测试过程中的部分截图
-###      e.testreport：测试报告，性能收集结果存储地方。
-###      f.testsuite:组织测试用例。
-###      g.untils：   公共的工具模块。
-###      h.main.py   ui自动化测试的主脚本
+###      2.1 config：配置相关
+###      2.2 data：用例存放Excel管理，dingwei下面需要写成测试步骤的逻辑。
+###      2.3 exctfuntion 根据测试文件里面的测试步骤形成相应的测试逻辑
+###      2.4 funtions：根据测试逻辑相关和exctfuntion下的形成测试步骤后组合成测试用例
+###      2.5 testcase:根据功能模块 形成的测试用例加入相应的测试数据 组成测试用例
+###      2.6 testlog:测试过程的日志
+###      2.7 testreport：测试报告，性能收集结果存储地方。
+###      2.8 testsuite:组织测试用例。
+###      2.9 untils：   公共的工具模块。
+###      2.10 main.py   ui自动化测试的主脚本
 
 -------
 

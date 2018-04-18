@@ -4,7 +4,7 @@
 '''
 获取配置相关手机性能的数据
 '''
-from untils.log import logger,LOG
+from untils.log import logger
 import  platform,os
 def getsystemsta():
 	'''根据所运行的系统获取adb不一样的筛选条件'''

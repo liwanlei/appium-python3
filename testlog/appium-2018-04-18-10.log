@@ -1,0 +1,49 @@
+[2018-04-18 10:14:44.903536] INFO: appium: UI自动化相关测试开始执行
+[2018-04-18 10:14:45.190072] INFO: appium: 当前模块 获取测试用例所需要的参数
+[2018-04-18 10:14:45.190572] INFO: appium: 全部kwargs参数信息 , {'index': 1}
+[2018-04-18 10:14:45.264082] INFO: appium: 测试报告路径为：C:\Users\Administrator\Desktop\xuesheng\appium-python3\testreport\2018-04-18-10-14.html
+[2018-04-18 10:14:45.267082] INFO: appium: 当前模块 开始从配置文件中获取测试相关的配置
+[2018-04-18 10:14:45.267582] INFO: appium: 全部kwargs参数信息 , {}
+[2018-04-18 10:14:57.440128] INFO: appium: reg测试用例开始执行
+[2018-04-18 10:14:57.440628] INFO: appium: 当前模块 注册测试
+[2018-04-18 10:14:57.440628] INFO: appium: 全部kwargs参数信息 , {'deriver': <appium.webdriver.webdriver.WebDriver (session="5c0c77d2-66d3-4949-bde7-52b2398820f6")>}
+[2018-04-18 10:14:57.440628] INFO: appium: 当前模块 解析测试步骤
+[2018-04-18 10:14:57.440628] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-04-18 10:14:57.440628] INFO: appium: 当前模块 解析yaml文件
+[2018-04-18 10:14:57.441128] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-04-18 10:15:19.416419] INFO: appium: 当前模块 采集cpu信息
+[2018-04-18 10:15:19.416419] INFO: appium: 全部kwargs参数信息 , {}
+[2018-04-18 10:15:19.758962] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+[2018-04-18 10:15:37.206678] INFO: appium: 当前模块 开始从配置文件中获取测试相关的配置
+[2018-04-18 10:15:37.206678] INFO: appium: 全部kwargs参数信息 , {}
+[2018-04-18 10:15:49.339718] INFO: appium: reg测试用例开始执行
+[2018-04-18 10:15:49.340218] INFO: appium: 当前模块 注册测试
+[2018-04-18 10:15:49.340218] INFO: appium: 全部kwargs参数信息 , {'deriver': <appium.webdriver.webdriver.WebDriver (session="f39c2e8a-a92a-402d-a73c-7c742f471519")>}
+[2018-04-18 10:15:49.340218] INFO: appium: 当前模块 解析测试步骤
+[2018-04-18 10:15:49.340218] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-04-18 10:15:49.340719] INFO: appium: 当前模块 解析yaml文件
+[2018-04-18 10:15:49.340719] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-04-18 10:16:12.556667] INFO: appium: 当前模块 采集cpu信息
+[2018-04-18 10:16:12.557167] INFO: appium: 全部kwargs参数信息 , {}
+[2018-04-18 10:16:15.812080] INFO: appium: 当前模块 获取使用的物理内存信息
+[2018-04-18 10:16:15.812080] INFO: appium: 全部kwargs参数信息 , {}
+[2018-04-18 10:16:18.906473] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-04-18 10:16:18.906473] INFO: appium: 全部kwargs参数信息 , {'cpu': '29%', 'neicun': '67M'}
+[2018-04-18 10:16:18.907973] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+[2018-04-18 10:16:36.459202] INFO: appium: 当前模块 开始从配置文件中获取测试相关的配置
+[2018-04-18 10:16:36.459702] INFO: appium: 全部kwargs参数信息 , {}
+[2018-04-18 10:16:48.385216] INFO: appium: reg测试用例开始执行
+[2018-04-18 10:16:48.385716] INFO: appium: 当前模块 注册测试
+[2018-04-18 10:16:48.385716] INFO: appium: 全部kwargs参数信息 , {'deriver': <appium.webdriver.webdriver.WebDriver (session="88ae7dd8-2ea1-4781-a606-807622544596")>}
+[2018-04-18 10:16:48.385716] INFO: appium: 当前模块 解析测试步骤
+[2018-04-18 10:16:48.386216] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-04-18 10:16:48.386216] INFO: appium: 当前模块 解析yaml文件
+[2018-04-18 10:16:48.386216] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-04-18 10:17:12.229744] INFO: appium: 当前模块 采集cpu信息
+[2018-04-18 10:17:12.229744] INFO: appium: 全部kwargs参数信息 , {}
+[2018-04-18 10:17:15.421649] INFO: appium: 当前模块 获取使用的物理内存信息
+[2018-04-18 10:17:15.422149] INFO: appium: 全部kwargs参数信息 , {}
+[2018-04-18 10:17:18.572550] INFO: appium: 当前模块 记录当前的cpu占有率，内存
+[2018-04-18 10:17:18.572550] INFO: appium: 全部kwargs参数信息 , {'cpu': '26%', 'neicun': '67M'}
+[2018-04-18 10:17:18.573550] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+[2018-04-18 10:17:35.955757] INFO: appium: UI自动化相关测试执行完毕！

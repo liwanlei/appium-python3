@@ -2,7 +2,7 @@
 -
   element_info: com.aixuetang.online:id/fixed_bottom_navigation_title
   find_type: id
-  index: 0
+  index: 2
   operate_type: click
 -
   element_info: com.aixuetang.online:id/login
@@ -25,6 +25,7 @@
   index: 0
   find_type: id
   operate_type: send_key
+  key: password
 -
   element_info: com.aixuetang.online:id/tv_code
   index: 0

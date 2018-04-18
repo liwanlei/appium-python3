@@ -21,7 +21,7 @@ class Makeappcase():
             if data[i]['operate_type'] =='click':
                 f[int(data[i]['index'])].click()
             elif data[i]['operate_type'] =='text':
-                f[int(data[i]['index'])].text()
+                f[int(data[i]['index'])].text
             elif data[i]['operate_type'] =='send_key':
                 f[int(data[i]['index'])].click()
                 f[int(data[i]['index'])].send_keys(kwargs.get(data[i]['key']))
@@ -30,8 +30,7 @@ class Makeappcase():
             i+=1
         f=case_der.find_elemens(lujing=data[-1]['element_info'], fangfa=data[-1]['find_type'])
         if data[-1]['operate_type'] == 'text':
-            f[data[-1]['index']].text()
-            duanyan={'code':0,'data':f}
+            duanyan={'code':0,'data':f[int(data[-1]['index'])].text}
         else:
             duanyan = {'code': 1, 'data':"请检查您的测试步骤最后一步为断言用的"}
             LOG.info('请检查您的测试步骤最后一步为断言用的')
