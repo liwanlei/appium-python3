@@ -14,3 +14,4 @@ TestappActivity= 'com.aixuetang.mobile.activities.HomeActivity'
 TestandroidDeviceReadyTimeout=30
 TestunicodeKeyboard=True
 TestresetKeyboard=True
+Dingtalk_access_token=''

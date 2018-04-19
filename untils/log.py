@@ -28,4 +28,3 @@ def logger(param):
             return function(*args, **kwargs)
         return _wrap
     return wrap
-

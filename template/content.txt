@@ -1,0 +1,10 @@
+
+    @ddt.data(*data_test)
+    def {}(self, data_test):
+        """{}测试"""
+        regfun=RegFuntion(deriver=self.deriver)
+        self.assertuen=regfun.reg(**data_test)
+        cpu=caijicpu(TestappPackage)
+        neicun=getnencun(TestappPackage)
+        write_recording(cpu=cpu,neicun=neicun)
+        self.assertEqual(data_test['assert'],self.assertuen,msg='fail resons:%s !=%s'%(data_test['assert'],self.assertuen))
