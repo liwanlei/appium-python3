@@ -25,6 +25,12 @@
 目前存在的不足，只能支持单台设备，单线程跑测试用例，性能测试数据目前收集存放在txt文档中没有进行分析
 ---------
 
+# 友情推荐本人其他开源代码：
+#      1.python app自动化测试平台版本：![Alt text](https://github.com/liwanlei/UFATestPlan)
+#      2.python接口测试框架：![Alt text](https://github.com/liwanlei/jiekou-python3)
+#      3.python接口测试平台版本![Alt text](https://github.com/liwanlei/FXTest)
+#      4.python+flask 做后台，实现微信小程序：![Alt text](https://github.com/liwanlei/webchat_app)
+
 ## 3.效果展示图
 ###  整体结构
 ![Alt text](https://github.com/liwanlei/appium-python3/blob/master/img/zhutijiegou.png)
