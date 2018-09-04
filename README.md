@@ -26,10 +26,10 @@
 ---------
 
 # 友情推荐本人其他开源代码：
-#      1.python app自动化测试平台版本：![Alt text](https://github.com/liwanlei/UFATestPlan)
-#      2.python接口测试框架：![Alt text](https://github.com/liwanlei/jiekou-python3)
-#      3.python接口测试平台版本![Alt text](https://github.com/liwanlei/FXTest)
-#      4.python+flask 做后台，实现微信小程序：![Alt text](https://github.com/liwanlei/webchat_app)
+#      1.python app自动化测试平台版本：https://github.com/liwanlei/UFATestPlan
+#      2.python接口测试框架：https://github.com/liwanlei/jiekou-python3
+#      3.python接口测试平台版本：https://github.com/liwanlei/FXTest
+#      4.python+flask 做后台，实现微信小程序：https://github.com/liwanlei/webchat_app
 
 ## 3.效果展示图
 ###  整体结构
