@@ -23,3 +23,4 @@ def huoqu_test(filepath,index):
         return listdata
     except Exception as e:
         LOG.info('获取测试用例参数失败！失败原因：%s'%e)
+        return e

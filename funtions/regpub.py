@@ -23,6 +23,7 @@ class RegFuntion:
         f=self.open.exce_case(**kwargs)
         if f['code']==1:
             LOG.info('无法获取断言')
+            return
         else:
             beijing=f['data']
-        return beijing
+            return beijing

@@ -6,6 +6,7 @@
 from untils.operyaml import open_da
 from untils.log import  logger,LOG
 from  untils.py_app import deriver_fengzhuang as feng
+'''解析测试步骤，按照需求进行测试用例'''
 @logger('解析测试步骤')
 class Makeappcase():
     def __init__(self,deriver,path):
