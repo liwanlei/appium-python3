@@ -18,6 +18,7 @@ from config.config import TestappPackage
 path=os.getcwd()
 testcasedata=path+'\\data\\testcase_data.xlsx'
 data_test=huoqu_test(testcasedata,index=1)
+
 @ddt.ddt
 class Regpuliblisdt(unittest.TestCase):
     def setUp(self):
