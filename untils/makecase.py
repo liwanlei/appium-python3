@@ -14,9 +14,9 @@ def readerconet():
     return conet
 def  makecasefile(casename,desc,funtionname):
     filepath=path+'//testcase//'+casename+'casetest.py'
-    print(filepath)
     if not os.path.exists(filepath):
         with open(filepath, 'w', encoding='utf-8') as file:
             file.write(readheader().format(casename, casename))
-    with open(filepath, 'a', encoding='utf-8') as file:
-        file.write(readerconet().format(funtionname, desc))
+            file.write(readerconet().format(funtionname, desc))
+    else:
+        pass

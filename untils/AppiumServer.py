@@ -17,14 +17,15 @@ class AppiumServer(object):
         self.kwargs=kwargs
     def run(self,url):
         time.sleep(10)
-        response = urllib.request.urlopen("http://127.0.0.1:40000/wd/hub" + "/status", timeout=5)
+        response = urllib.request.urlopen(url, timeout=5)
+        print(url)
         if str(response.getcode()).startswith("2"):
             return True
 
     def start_server(self):
         for i in range(0, len(self.kwargs)):
-            cmd = "appium --session-override  -p %s -bp %s -U %s" % (
-                self.kwargs[i]["port"], self.kwargs[i]["bport"], self.kwargs[i]["devices"])
+            cmd = "appium --session-override  -p %s  -U %s" % (
+                self.kwargs[i]["port"],  self.kwargs[i]["devices"])
             if platform.system() == "Windows":  # windows下启动server
                 t1 = RunServer(cmd)
                 p = Process(target=t1.start())

@@ -165,15 +165,3 @@ class AndroidDebugBridge(object):
         result = string.split(" ")
         # print(result[4])
         return result[4]
-
-if __name__ == '__main__':
-    pass
-    apkPath = '/Users/zhulixin/Desktop/appium/app/VivaVideo_7.2.5.apk'
-    apk = ApkInfo(apkPath).getApkBaseInfo()
-    size = ApkInfo(apkPath).getApkSize()
-    activity = ApkInfo(apkPath).getApkActivity()
-    appname = ApkInfo(apkPath).getApkName()
-
-    print('size:', size)
-    print('launchActivity:', activity)
-    print('appName:', appname)

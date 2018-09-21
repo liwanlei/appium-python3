@@ -1,6 +1,6 @@
 
     @ddt.data(*data_test)
-    def {}(self, data_test):
+    def test{}test(self, data_test):
         """{}测试"""
         regfun=RegFuntion(deriver=self.deriver)
         self.assertuen=regfun.reg(**data_test)
