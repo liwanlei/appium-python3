@@ -7,7 +7,7 @@ import unittest
 class Parmer(unittest.TestCase):
     def __init__(self, methodName='runTest', port=None):
         super(Parmer, self).__init__(methodName)
-        port = port
+        self.port =port
 
     def parametrize(testcase_klass, param=None):
         # print("---parametrize-----")

@@ -8,8 +8,8 @@
 import  os,time
 from untils.log import LOG,logger
 path=os.getcwd()
-now = time.strftime('%Y-%m-%d-%H-%M', time.localtime(time.time()))
-recording=path+'\\testreport\\%s.txt'%now
+now = time.strftime('%Y-%m-%d', time.localtime(time.time()))
+recording=path+'\\testreport\\%s-xing.txt'%now
 @logger('记录当前的cpu占有率，内存')
 def write_recording(cpu,neicun):
     try:

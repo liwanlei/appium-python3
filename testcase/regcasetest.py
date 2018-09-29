@@ -1,6 +1,5 @@
 from appium import webdriver
 import ddt,os,time
-
 from untils.Parmeris import Parmer
 from untils.log import LOG
 from untils.disapp import make_dis
@@ -23,7 +22,7 @@ class regtest(Parmer):
     def setUp(self):
         """ setup """
         self.dis_app = make_dis()
-        self.deriver = webdriver.Remote('http://localhost:'+self.port+'/wd/hub', self.dis_app)
+        self.deriver = webdriver.Remote('http://localhost:'+self.port+'/wd/hub',self.dis_app)
         LOG.info('reg测试用例开始执行')
     def tearDown(self):
         """ tearDown  """
@@ -40,7 +39,7 @@ class regtest(Parmer):
         write_recording(cpu=cpu,neicun=neicun)
         if data_test['assert']==self.assertuen:
             shebei=self.parm['udid']
-            data=shebei+'&'+'pass'
+            data=shebei+'&'+'pass'+'&'+str(data_test)
             save_result(data)
         else:
             shebei = self.parm['udid']

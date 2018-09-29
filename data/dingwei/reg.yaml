@@ -1,8 +1,18 @@
 ---
 -
-  element_info: com.aixuetang.online:id/fixed_bottom_navigation_title
+  element_info: com.aixuetang.online:id/balrog
   find_type: id
-  index: 2
+  index: 0
+  operate_type: click
+-
+  element_info: com.aixuetang.online:id/btn_p
+  find_type: id
+  index: 0
+  operate_type: click
+-
+  element_info: com.aixuetang.online:id/fixed_bottom_navigation_container
+  find_type: id
+  index: 3
   operate_type: click
 -
   element_info: com.aixuetang.online:id/login
@@ -10,7 +20,7 @@
   index: 0
   operate_type: click
 -
- element_info: com.aixuetang.online:id/toolbar_menu
+ element_info: com.aixuetang.online:id/regist
  index: 0
  find_type: id
  operate_type: click
@@ -27,15 +37,11 @@
   operate_type: send_key
   key: password
 -
-  element_info: com.aixuetang.online:id/tv_code
-  index: 0
-  find_type: id
-  operate_type: click
--
   element_info: com.aixuetang.online:id/et_code
   index: 0
   find_type: id
-  operate_type: click
+  operate_type: send_key
+  key: yanzhengma
 -
   element_info: com.aixuetang.online:id/tv_register
   index: 0

@@ -30,9 +30,10 @@ class AppiumServer(object):
                 t1 = RunServer(cmd)
                 p = Process(target=t1.start())
                 p.start()
+                print(self.kwargs[i]["port"])
                 while True:
                     print("--------start_win_server-------------")
-                    if self.run("http://127.0.0.1:" + self.kwargs[i]["port"] + "/wd/hub" + "/status"):
+                    if self.run("http://127.0.0.1:" + self.kwargs[i]["port"] + "/wd/hub/status"):
                         print("-------win_server_ 成功--------------")
                         break
             else:

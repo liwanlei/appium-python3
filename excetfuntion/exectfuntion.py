@@ -5,6 +5,7 @@
 """
 from untils.operyaml import open_da
 from untils.log import  logger,LOG
+import  time
 from  untils.py_app import deriver_fengzhuang as feng
 '''解析测试步骤，按照需求进行测试用例'''
 @logger('解析测试步骤')
@@ -24,11 +25,12 @@ class Makeappcase():
             elif data[i]['operate_type'] =='text':
                 f[int(data[i]['index'])].text
             elif data[i]['operate_type'] =='send_key':
-                f[int(data[i]['index'])].click()
-                f[int(data[i]['index'])].send_keys(kwargs.get(data[i]['key']))
+                f[int(data[i]['index'])].clear()
+                f[int(data[i]['index'])].set_value(kwargs.get(data[i]['key']))
             else:
                 LOG.info('请检查您的测试步骤')
             i+=1
+            time.sleep(8)
         f=case_der.find_elemens(lujing=data[-1]['element_info'], fangfa=data[-1]['find_type'])
         if data[-1]['operate_type'] == 'text':
             duanyan={'code':0,'data':f[int(data[-1]['index'])].text}
