@@ -8,7 +8,7 @@
 '''主运行文件'''
 from untils.pyreport_excel import create
 import  unittest,random,datetime
-from untils.log import LOG
+from untils.log import LOG,logger
 from  untils.makecase import makecasefile
 from multiprocessing import Pool
 from  testcase.regcasetest import regtest
@@ -17,12 +17,12 @@ from untils.AppiumServer import AppiumServer
 from  untils.BaseApk import getPhoneInfo,AndroidDebugBridge
 import os
 l_devices=[]
+@logger('生成设备配置链接的进程池')
 def runnerPool(getDevices):
     devices_Pool = []
     for i in range(0, len(getDevices)):
         _pool = []
         _initApp = {}
-        print("=====runnerPool=========")
         _initApp["deviceName"] = getDevices[i]["devices"]
         _initApp["udid"] = getDevices[i]["devices"]
         _initApp["platformVersion"] = getPhoneInfo(devices=_initApp["deviceName"])["release"]
@@ -36,6 +36,7 @@ def runnerPool(getDevices):
     pool.map(runnerCaseApp, devices_Pool)
     pool.close()
     pool.join()
+@logger('组织测试用例')
 def runnerCaseApp(devices):
     test_suit = unittest.TestSuite()
     test_suit.addTest(Parmer.parametrize(regtest,param=devices))
@@ -57,12 +58,14 @@ if __name__=="__main__":
         appium_server.start_server()
         runnerPool(l_devices)
         try:
-            appium_server.stop_server(l_devices)
-        except:
+            appium_server.stop_server(devicess)
+        except Exception as e:
+            LOG.info("关闭服务失败，原因：%s"%e)
             pass
         end_time=datetime.datetime.now()
         hour=end_time-start_time
         create(filename=filenm,devices_list=devicess,Test_version='2.0.1',testtime=str(hour))
         LOG.info("测试执行完毕，耗时：%s"%hour)
     else:
+        LOG.info("没有可用的安卓设备")
         print("没有可用的安卓设备")

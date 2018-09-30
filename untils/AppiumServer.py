@@ -6,6 +6,7 @@
 import os,urllib.request
 from multiprocessing import Process
 import threading,time,platform,subprocess
+from untils.log import LOG,logger
 class RunServer(threading.Thread):
     def __init__(self, cmd):
         threading.Thread.__init__(self)
@@ -18,10 +19,8 @@ class AppiumServer(object):
     def run(self,url):
         time.sleep(10)
         response = urllib.request.urlopen(url, timeout=5)
-        print(url)
         if str(response.getcode()).startswith("2"):
             return True
-
     def start_server(self):
         for i in range(0, len(self.kwargs)):
             cmd = "appium --session-override  -p %s  -U %s" % (
@@ -30,11 +29,9 @@ class AppiumServer(object):
                 t1 = RunServer(cmd)
                 p = Process(target=t1.start())
                 p.start()
-                print(self.kwargs[i]["port"])
                 while True:
-                    print("--------start_win_server-------------")
                     if self.run("http://127.0.0.1:" + self.kwargs[i]["port"] + "/wd/hub/status"):
-                        print("-------win_server_ 成功--------------")
+                        LOG.info("-------win_server_ 成功--------------")
                         break
             else:
                 appium = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=1,
@@ -46,7 +43,7 @@ class AppiumServer(object):
                     if 'listener started' in appium_line or 'Error: listen' in appium_line:
                         print("----server启动成功---")
                         break
-    def stop_server(devices):
+    def stop_server(devices:list):
         sysstr = platform.system()
         if sysstr == 'Windows':
             os.popen("taskkill /f /im node.exe")

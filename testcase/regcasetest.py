@@ -34,9 +34,9 @@ class regtest(Parmer):
         """reg测试"""
         regfun=RegFuntion(deriver=self.deriver)
         self.assertuen=regfun.reg(**data_test)
-        cpu=caijicpu(TestappPackage)
-        neicun=getnencun(TestappPackage)
-        write_recording(cpu=cpu,neicun=neicun)
+        cpu=caijicpu(packagename=TestappPackage,devices=self.parm['devices'])
+        neicun=getnencun(packagename=TestappPackage,devices=self.parm['devices'])
+        write_recording(cpu=cpu,neicun=neicun,devices=str(self.parm['devices']))
         if data_test['assert']==self.assertuen:
             shebei=self.parm['udid']
             data=shebei+'&'+'pass'+'&'+str(data_test)

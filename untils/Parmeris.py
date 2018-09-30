@@ -10,8 +10,6 @@ class Parmer(unittest.TestCase):
         self.port =port
 
     def parametrize(testcase_klass, param=None):
-        # print("---parametrize-----")
-        # print(param)
         testloader = unittest.TestLoader()
         testnames = testloader.getTestCaseNames(testcase_klass)
         suite = unittest.TestSuite()

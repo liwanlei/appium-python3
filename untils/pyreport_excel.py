@@ -11,6 +11,7 @@ from datetime import datetime
 from  config.config import *
 from  untils.saveresult import parse_result
 from untils.log import LOG,logger
+from untils.BaseApk import getPhoneInfo
 def yangshi1():
     style = XFStyle()
     fnt = Font()
@@ -67,9 +68,13 @@ def create(filename,testtime,Test_version,devices_list):
         table.write(4,2,'测试人',style=style1)
         table.write(5,2,'测试时间',style=style1)
         table.write(6,2,'审核人',style=style1)
-        table.write(8,0,'机型',style=style1)
-        table.write(8,1, '通过', style=style1)
-        table.write(8,2, '失败', style=style1)
+        table.write(8,0,'链接号',style=style1)
+        table.write(8,1, '品牌', style=style1)
+        table.write(8,2, '设备名', style=style1)
+        table.write(8,3, '型号', style=style1)
+        table.write(8,4, '版本', style=style1)
+        table.write(8,5, '通过', style=style1)
+        table.write(8,6, '失败', style=style1)
         table.write(4, 1, Test_Project_name,style=style1)
         table.write(5, 1, Test_version,style=style1)
         table.write(6, 1, testtime,style=style1)
@@ -78,13 +83,17 @@ def create(filename,testtime,Test_version,devices_list):
         table.write(5, 3, datetime.now().strftime("%Y-%m-%d %HH:%MM"),style=style1)
         table.write(6, 3, "admin",style=style1)
         all_result=[]
-        LOG.info('开始写入bug')
         for devices in devices_list:
             fail,pass_a,reslut=parse_result(devices=str(devices))
             all_result.append(reslut)
+            de_result=getPhoneInfo(devices=str(devices))
             table.write(9,0,devices, style=style1)
-            table.write(9,1,fail, style=style1)
-            table.write(9,2,pass_a, style=style1)
+            table.write(9, 1,de_result['brand'], style=style1)
+            table.write(9, 2,de_result['device'], style=style1)
+            table.write(9, 3,de_result['model'], style=style1)
+            table.write(9, 4,de_result['release'], style=style1)
+            table.write(9,5,fail, style=style1)
+            table.write(9,6,pass_a, style=style1)
         table1 = file.add_sheet('测试详情',cell_overwrite_ok=True)
         table1.write_merge(0,0,0,8,'测试详情',style=style)
         for i in range(0,6):
