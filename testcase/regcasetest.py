@@ -17,6 +17,7 @@ class regtest(Parmer):
     def __init__(self,parm, methodName='runTest'):
         super(regtest, self).__init__(methodName)
         self.port=parm['port']
+        LOG.info(parm)
         self.parm=parm
     """这是reg测试用例"""
     def setUp(self):

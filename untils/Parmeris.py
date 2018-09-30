@@ -5,10 +5,9 @@
 '''
 import unittest
 class Parmer(unittest.TestCase):
-    def __init__(self, methodName='runTest', port=None):
+    def __init__(self, methodName='runTest', parme=None):
         super(Parmer, self).__init__(methodName)
-        self.port =port
-
+        self.parme=parme
     def parametrize(testcase_klass, param=None):
         testloader = unittest.TestLoader()
         testnames = testloader.getTestCaseNames(testcase_klass)

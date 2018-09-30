@@ -52,7 +52,7 @@ if __name__=="__main__":
         for dev in devicess:
             app = {}
             app["devices"] = dev
-            app["port"] = str(random.randint(4562, 4575))
+            app["port"] = str(random.randint(4575, 4580))
             l_devices.append(app)
         appium_server = AppiumServer(l_devices)
         appium_server.start_server()

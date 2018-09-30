@@ -30,6 +30,7 @@ class AppiumServer(object):
                 p = Process(target=t1.start())
                 p.start()
                 while True:
+                    time.sleep(4)
                     if self.run("http://127.0.0.1:" + self.kwargs[i]["port"] + "/wd/hub/status"):
                         LOG.info("-------win_server_ 成功--------------")
                         break
