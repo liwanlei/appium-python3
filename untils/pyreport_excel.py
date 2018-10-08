@@ -12,6 +12,7 @@ from  config.config import *
 from  untils.saveresult import parse_result
 from untils.log import LOG,logger
 from untils.BaseApk import getPhoneInfo
+'''生成xlsx的测试报告'''
 def yangshi1():
     style = XFStyle()
     fnt = Font()

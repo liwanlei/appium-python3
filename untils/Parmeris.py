@@ -3,6 +3,7 @@
 @file: Parmeris.py
 @time: 2018/9/21 12:38
 '''
+'''uittest的再次封装'''
 import unittest
 class Parmer(unittest.TestCase):
     def __init__(self, methodName='runTest', parme=None):

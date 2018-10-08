@@ -7,7 +7,8 @@ import os,urllib.request
 from multiprocessing import Process
 import threading,time,platform,subprocess
 from untils.log import LOG,logger
-class RunServer(threading.Thread):
+'''启动appium服务'''
+class RunServer(threading.Thread):#启动服务的线程
     def __init__(self, cmd):
         threading.Thread.__init__(self)
         self.cmd = cmd
@@ -21,7 +22,7 @@ class AppiumServer(object):
         response = urllib.request.urlopen(url, timeout=5)
         if str(response.getcode()).startswith("2"):
             return True
-    def start_server(self):
+    def start_server(self):#开启服务
         for i in range(0, len(self.kwargs)):
             cmd = "appium --session-override  -p %s  -U %s" % (
                 self.kwargs[i]["port"],  self.kwargs[i]["devices"])

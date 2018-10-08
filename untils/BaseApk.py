@@ -29,9 +29,7 @@ class ApkInfo():
                              stdin=subprocess.PIPE, shell=True)
         (output, err) = p.communicate()
         match = re.compile("launchable-activity: name=(\S+)").search(output.decode())
-        # print("match=%s" %match)
         if match is not None:
-            # print('launchable-activity:', match.group(1))
             return match.group(1)
     # 得到应用名字
     def getApkName(self):
@@ -46,6 +44,7 @@ class ApkInfo():
             result = output.split()[0].decode()[19:-1]
         return result
 def getPhoneInfo(devices):
+    '''获取设备的一些基本信息'''
     cmd = "adb -s " + devices +" shell cat /system/build.prop "
     phone_info = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stdout.readlines()
     release = "ro.build.version.release=" # 版本
@@ -74,7 +73,6 @@ class AndroidDebugBridge(object):
     def call_adb(self, command):
         command_result = ''
         command_text = 'adb %s' % command
-        # print(command_text)
         results = os.popen(command_text, "r")
         while 1:
             line = results.readline()
@@ -86,7 +84,7 @@ class AndroidDebugBridge(object):
     def pull(self, remote, local):
         result = self.call_adb("pull %s %s" % (remote, local))
         return result
-
+    #获取连接的设备
     def attached_devices(self):
         devices = []
         result = subprocess.Popen("adb devices", shell=True, stdout=subprocess.PIPE,

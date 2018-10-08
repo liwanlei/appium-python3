@@ -16,7 +16,8 @@ def getsystemsta():
 	return  find_manage
 find=getsystemsta()
 @logger('采集cpu信息')
-def caijicpu(packagename,devices):#这里采集的cpu时候可以是执行操作采集 就是-n  -d  刷新间隔
+def caijicpu(packagename,devices):
+	'''这里采集的cpu时候可以是执行操作采集 就是-n  -d  刷新间隔'''
 	try:
 		cpu='adb -s %s shell top -n 1| %s %s'%(devices,find,packagename)
 		re_cpu=os.popen(cpu).read().split()[2]
@@ -24,7 +25,8 @@ def caijicpu(packagename,devices):#这里采集的cpu时候可以是执行操作
 	except:
 		pass
 @logger('获取使用的物理内存信息')
-def getnencun(devices,packagename):#Total 的实际使用过物理内存
+def getnencun(devices,packagename):
+	'''Total 的实际使用过物理内存'''
 	try:
 		cpu = 'adb -s %s shell top -n 1| %s %s' % (devices,find, packagename)
 		re_cpu=os.popen(cpu).read().split()[6]
@@ -32,4 +34,3 @@ def getnencun(devices,packagename):#Total 的实际使用过物理内存
 		return re_cpu_m
 	except:
 		pass
-
