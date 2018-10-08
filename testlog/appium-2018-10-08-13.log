@@ -1,0 +1,104 @@
+[2018-10-08 13:06:05.647127] INFO: appium: 当前模块 获取测试用例所需要的参数
+[2018-10-08 13:06:05.648128] INFO: appium: 全部kwargs参数信息 , {'index': 1}
+[2018-10-08 13:06:05.661129] INFO: appium: 测试开始执行
+[2018-10-08 13:06:05.766143] INFO: appium: 开始生成测试用例文件
+[2018-10-08 13:06:06.357218] INFO: appium: 当前模块 获取测试用例所需要的参数
+[2018-10-08 13:06:06.358218] INFO: appium: 全部kwargs参数信息 , {'index': 1}
+[2018-10-08 13:06:20.291987] INFO: appium: -------win_server_ 成功--------------
+[2018-10-08 13:06:20.292487] INFO: appium: 当前模块 生成设备配置链接的进程池
+[2018-10-08 13:06:20.292487] INFO: appium: 全部kwargs参数信息 , {}
+[2018-10-08 13:06:20.387999] INFO: appium: {'release': '5.1.1', 'model': 'AOSP', 'brand': 'Android', 'device': 'shamu'}
+[2018-10-08 13:06:20.900564] INFO: appium: 当前模块 获取测试用例所需要的参数
+[2018-10-08 13:06:20.901064] INFO: appium: 全部kwargs参数信息 , {'index': 1}
+[2018-10-08 13:06:20.914566] INFO: appium: 当前模块 组织测试用例
+[2018-10-08 13:06:20.914566] INFO: appium: 全部kwargs参数信息 , {}
+[2018-10-08 13:06:20.915066] INFO: appium: {'deviceName': '127.0.0.1:62001', 'udid': '127.0.0.1:62001', 'platformVersion': '5.1.1', 'platformName': 'android', 'port': '4580', 'appPackage': 'com.aixuetang.online', 'appActivity': 'com.aixuetang.mobile.activities.HomeActivity'}
+[2018-10-08 13:06:20.915066] INFO: appium: 当前模块 开始从配置文件中获取测试相关的配置
+[2018-10-08 13:06:20.915066] INFO: appium: 全部kwargs参数信息 , {'Testplatform': 'android', 'TestplatformVersion': '5.1.1', 'Testdevicesname': '127.0.0.1:62001', 'TestappPackage': 'com.aixuetang.online', 'TestappActivity': 'com.aixuetang.mobile.activities.HomeActivity'}
+[2018-10-08 13:06:36.680068] INFO: appium: reg测试用例开始执行
+[2018-10-08 13:06:36.680068] INFO: appium: 当前模块 注册测试
+[2018-10-08 13:06:36.680568] INFO: appium: 全部kwargs参数信息 , {'deriver': <appium.webdriver.webdriver.WebDriver (session="0677d5d6-52cd-4171-9563-bd87d201bc61")>}
+[2018-10-08 13:06:36.680568] INFO: appium: 当前模块 解析测试步骤
+[2018-10-08 13:06:36.680568] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-10-08 13:06:36.680568] INFO: appium: 当前模块 解析yaml文件
+[2018-10-08 13:06:36.681068] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-10-08 13:08:26.655033] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+[2018-10-08 13:08:50.416550] INFO: appium: 关闭服务失败，原因：stop_server() takes 1 positional argument but 2 were given
+[2018-10-08 13:08:50.417051] INFO: appium: 当前模块 生成测试报告
+[2018-10-08 13:08:50.417051] INFO: appium: 全部kwargs参数信息 , {'filename': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3//testreport//result.xls', 'devices_list': ['127.0.0.1:62001'], 'Test_version': '2.0.1', 'testtime': '0:02:44.755422'}
+[2018-10-08 13:08:50.418051] INFO: appium: 当前模块 解析测试结果
+[2018-10-08 13:08:50.418051] INFO: appium: 全部kwargs参数信息 , {'devices': '127.0.0.1:62001'}
+[2018-10-08 13:08:50.418551] ERROR: appium: 测试报告生成失败,原因：[Errno 2] No such file or directory: 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\testreport\\2018-10-08.txt'
+[2018-10-08 13:08:50.419051] INFO: appium: 测试执行完毕，耗时：0:02:44.755422
+[2018-10-08 13:14:57.521423] INFO: appium: 当前模块 获取测试用例所需要的参数
+[2018-10-08 13:14:57.554927] INFO: appium: 全部kwargs参数信息 , {'index': 1}
+[2018-10-08 13:14:57.739951] INFO: appium: 测试开始执行
+[2018-10-08 13:14:58.624563] INFO: appium: 开始生成测试用例文件
+[2018-10-08 13:14:59.261144] INFO: appium: 当前模块 获取测试用例所需要的参数
+[2018-10-08 13:14:59.262144] INFO: appium: 全部kwargs参数信息 , {'index': 1}
+[2018-10-08 13:15:18.021526] INFO: appium: 当前模块 获取测试用例所需要的参数
+[2018-10-08 13:15:18.022526] INFO: appium: 全部kwargs参数信息 , {'index': 1}
+[2018-10-08 13:15:18.031527] INFO: appium: 测试开始执行
+[2018-10-08 13:15:18.122539] INFO: appium: 开始生成测试用例文件
+[2018-10-08 13:15:18.674109] INFO: appium: 当前模块 获取测试用例所需要的参数
+[2018-10-08 13:15:18.675109] INFO: appium: 全部kwargs参数信息 , {'index': 1}
+[2018-10-08 13:15:46.827184] INFO: appium: 当前模块 获取测试用例所需要的参数
+[2018-10-08 13:15:46.828184] INFO: appium: 全部kwargs参数信息 , {'index': 1}
+[2018-10-08 13:15:46.837185] INFO: appium: 测试开始执行
+[2018-10-08 13:15:47.163227] INFO: appium: 开始生成测试用例文件
+[2018-10-08 13:15:47.755302] INFO: appium: 当前模块 获取测试用例所需要的参数
+[2018-10-08 13:15:47.755802] INFO: appium: 全部kwargs参数信息 , {'index': 1}
+[2018-10-08 13:16:01.667568] INFO: appium: -------win_server_ 成功--------------
+[2018-10-08 13:16:02.209637] INFO: appium: 当前模块 获取测试用例所需要的参数
+[2018-10-08 13:16:02.210637] INFO: appium: 全部kwargs参数信息 , {'index': 1}
+[2018-10-08 13:16:16.127405] INFO: appium: -------win_server_ 成功--------------
+[2018-10-08 13:16:16.127905] INFO: appium: 当前模块 生成设备配置链接的进程池
+[2018-10-08 13:16:16.127905] INFO: appium: 全部kwargs参数信息 , {}
+[2018-10-08 13:16:16.263422] INFO: appium: {'release': '5.1.1', 'model': 'AOSP', 'brand': 'Android', 'device': 'shamu'}
+[2018-10-08 13:16:16.374436] INFO: appium: {'release': '5.1.1', 'model': 'AOSP', 'brand': 'Android', 'device': 'shamu'}
+[2018-10-08 13:16:16.962511] INFO: appium: 当前模块 获取测试用例所需要的参数
+[2018-10-08 13:16:16.963011] INFO: appium: 全部kwargs参数信息 , {'index': 1}
+[2018-10-08 13:16:17.096028] INFO: appium: 当前模块 组织测试用例
+[2018-10-08 13:16:17.096028] INFO: appium: 全部kwargs参数信息 , {}
+[2018-10-08 13:16:17.096528] INFO: appium: {'deviceName': '127.0.0.1:62026', 'udid': '127.0.0.1:62026', 'platformVersion': '5.1.1', 'platformName': 'android', 'port': '4597', 'appPackage': 'com.aixuetang.online', 'appActivity': 'com.aixuetang.mobile.activities.HomeActivity'}
+[2018-10-08 13:16:17.097028] INFO: appium: 当前模块 开始从配置文件中获取测试相关的配置
+[2018-10-08 13:16:17.097028] INFO: appium: 全部kwargs参数信息 , {'Testplatform': 'android', 'TestplatformVersion': '5.1.1', 'Testdevicesname': '127.0.0.1:62026', 'TestappPackage': 'com.aixuetang.online', 'TestappActivity': 'com.aixuetang.mobile.activities.HomeActivity'}
+[2018-10-08 13:16:17.292552] INFO: appium: 当前模块 获取测试用例所需要的参数
+[2018-10-08 13:16:17.294053] INFO: appium: 全部kwargs参数信息 , {'index': 1}
+[2018-10-08 13:16:17.309055] INFO: appium: 当前模块 组织测试用例
+[2018-10-08 13:16:17.309055] INFO: appium: 全部kwargs参数信息 , {}
+[2018-10-08 13:16:17.309555] INFO: appium: {'deviceName': '127.0.0.1:62001', 'udid': '127.0.0.1:62001', 'platformVersion': '5.1.1', 'platformName': 'android', 'port': '4593', 'appPackage': 'com.aixuetang.online', 'appActivity': 'com.aixuetang.mobile.activities.HomeActivity'}
+[2018-10-08 13:16:17.309555] INFO: appium: 当前模块 开始从配置文件中获取测试相关的配置
+[2018-10-08 13:16:17.310055] INFO: appium: 全部kwargs参数信息 , {'Testplatform': 'android', 'TestplatformVersion': '5.1.1', 'Testdevicesname': '127.0.0.1:62001', 'TestappPackage': 'com.aixuetang.online', 'TestappActivity': 'com.aixuetang.mobile.activities.HomeActivity'}
+[2018-10-08 13:16:36.016430] INFO: appium: reg测试用例开始执行
+[2018-10-08 13:16:36.016930] INFO: appium: 当前模块 注册测试
+[2018-10-08 13:16:36.016930] INFO: appium: 全部kwargs参数信息 , {'deriver': <appium.webdriver.webdriver.WebDriver (session="1a507651-4793-434b-97d2-f0f71453eb61")>}
+[2018-10-08 13:16:36.016930] INFO: appium: 当前模块 解析测试步骤
+[2018-10-08 13:16:36.017430] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-10-08 13:16:36.017430] INFO: appium: 当前模块 解析yaml文件
+[2018-10-08 13:16:36.017930] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-10-08 13:16:36.992054] INFO: appium: reg测试用例开始执行
+[2018-10-08 13:16:36.992054] INFO: appium: 当前模块 注册测试
+[2018-10-08 13:16:36.992554] INFO: appium: 全部kwargs参数信息 , {'deriver': <appium.webdriver.webdriver.WebDriver (session="72cb7894-293d-4aea-a418-793c9c781af1")>}
+[2018-10-08 13:16:36.992554] INFO: appium: 当前模块 解析测试步骤
+[2018-10-08 13:16:36.992554] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-10-08 13:16:36.993054] INFO: appium: 当前模块 解析yaml文件
+[2018-10-08 13:16:36.993054] INFO: appium: 全部kwargs参数信息 , {'path': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\data\\dingwei\\reg.yaml'}
+[2018-10-08 13:16:37.044061] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+[2018-10-08 13:18:27.220551] INFO: appium: 测试用例执行完毕，测试环境正在还原！
+[2018-10-08 13:18:53.783424] INFO: appium: 关闭服务失败，原因：stop_server() takes 1 positional argument but 2 were given
+[2018-10-08 13:18:53.783924] INFO: appium: 当前模块 生成测试报告
+[2018-10-08 13:18:53.784424] INFO: appium: 全部kwargs参数信息 , {'filename': 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3//testreport//result.xls', 'devices_list': ['127.0.0.1:62026', '127.0.0.1:62001'], 'Test_version': '2.0.1', 'testtime': '0:03:06.946739'}
+[2018-10-08 13:18:53.784924] INFO: appium: 当前模块 解析测试结果
+[2018-10-08 13:18:53.784924] INFO: appium: 全部kwargs参数信息 , {'devices': '127.0.0.1:62026'}
+[2018-10-08 13:18:53.785925] ERROR: appium: 测试报告生成失败,原因：[Errno 2] No such file or directory: 'C:\\Users\\Administrator\\Desktop\\xuesheng\\appium-python3\\testreport\\2018-10-08.txt'
+[2018-10-08 13:18:53.785925] INFO: appium: 测试执行完毕，耗时：0:03:06.946739
+[2018-10-08 13:21:51.883540] INFO: appium: 当前模块 获取测试用例所需要的参数
+[2018-10-08 13:21:51.884040] INFO: appium: 全部kwargs参数信息 , {'index': 1}
+[2018-10-08 13:21:51.894542] INFO: appium: 测试开始执行
+[2018-10-08 13:21:52.032059] INFO: appium: 开始生成测试用例文件
+[2018-10-08 13:21:52.632135] INFO: appium: 当前模块 获取测试用例所需要的参数
+[2018-10-08 13:21:52.633135] INFO: appium: 全部kwargs参数信息 , {'index': 1}
+[2018-10-08 13:22:06.506897] INFO: appium: -------win_server_ 成功--------------
+[2018-10-08 13:22:07.145978] INFO: appium: 当前模块 获取测试用例所需要的参数
+[2018-10-08 13:22:07.146478] INFO: appium: 全部kwargs参数信息 , {'index': 1}

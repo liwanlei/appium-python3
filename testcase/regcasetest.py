@@ -2,6 +2,7 @@ from appium import webdriver
 import ddt,os,time
 from untils.Parmeris import Parmer
 from untils.log import LOG
+from untils.disapp import make_dis
 from untils.gettestdata import huoqu_test
 from funtions.regpub import RegFuntion
 from untils.huoqu_xingneng import caijicpu,getnencun
@@ -11,22 +12,6 @@ path=os.getcwd()
 testcasedata=path+'\\data\\testcase_data.xlsx'
 data_test=huoqu_test(testcasedata,index=1)
 from untils.saveresult import save_result
-def appium_testcase(devices):
-    desired_caps = {}
-    if str(devices["platformName"]).lower() == "android":
-        desired_caps["unicodeKeyboard"] = "True"
-        desired_caps["resetKeyboard"] = "True"
-    desired_caps['udid'] = devices["udid"]
-    desired_caps['deviceName'] = devices["deviceName"]
-    desired_caps['platformVersion'] = devices["platformVersion"]
-    desired_caps['platformName'] = devices["platformName"]
-    desired_caps['appPackage'] = devices['appPackage']
-    desired_caps['appActivity'] =devices['appActivity']
-    desired_caps["noReset"] = "True"
-    desired_caps['noSign'] = "True"
-    remote = "http://127.0.0.1:" + str(devices["port"]) + "/wd/hub"
-    driver = webdriver.Remote(remote, desired_caps)
-    return driver
 @ddt.ddt
 class regtest(Parmer):
     def __init__(self,parm, methodName='runTest'):
@@ -37,8 +22,12 @@ class regtest(Parmer):
     """这是reg测试用例"""
     def setUp(self):
         """ setup """
-        LOG.info('devices:%s'%self.parm)
-        self.deriver = appium_testcase(devices=self.parm)
+        self.dis_app = make_dis(Testplatform=self.parm['platformName'],
+                                TestplatformVersion=self.parm['platformVersion'],
+                                Testdevicesname=self.parm['deviceName'],
+                                TestappPackage=self.parm['appPackage'],
+                                TestappActivity=self.parm['appActivity'])
+        self.deriver = webdriver.Remote('http://localhost:'+self.port+'/wd/hub',self.dis_app)
         LOG.info('reg测试用例开始执行')
     def tearDown(self):
         """ tearDown  """
@@ -50,9 +39,9 @@ class regtest(Parmer):
         """reg测试"""
         regfun=RegFuntion(deriver=self.deriver)
         self.assertuen=regfun.reg(**data_test)
-        cpu=caijicpu(packagename=TestappPackage,devices=self.parm['devices'])
-        neicun=getnencun(packagename=TestappPackage,devices=self.parm['devices'])
-        write_recording(cpu=cpu,neicun=neicun,devices=str(self.parm['devices']))
+        cpu=caijicpu(packagename=TestappPackage,devices=self.parm['deviceName'])
+        neicun=getnencun(packagename=TestappPackage,devices=self.parm['deviceName'])
+        write_recording(cpu=cpu,neicun=neicun,devices=str(self.parm['deviceName']))
         if data_test['assert']==self.assertuen:
             shebei=self.parm['udid']
             data=shebei+'&'+'pass'+'&'+str(data_test)
