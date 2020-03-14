@@ -9,7 +9,7 @@ from untils.huoqu_xingneng import caijicpu,getnencun
 from untils.recording_txt import write_recording
 from config.config import TestappPackage
 path=os.getcwd()
-testcasedata=path+'\\data\\testcase_data.xlsx'
+testcasedata=path+'//data/testcase_data.xlsx'
 data_test=huoqu_test(testcasedata,index=1)
 from untils.saveresult import save_result
 @ddt.ddt

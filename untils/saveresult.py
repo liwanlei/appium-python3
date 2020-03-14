@@ -7,7 +7,7 @@ import os,time
 from untils.log import logger,LOG
 path = os.getcwd()
 now = time.strftime('%Y-%m-%d', time.localtime(time.time()))
-recording = path + '\\testreport\\%s.txt' % now
+recording = path + '/testreport/%s.txt' % now
 '''记录测试结果'''
 @logger('保存测试结果')
 def save_result(data):
