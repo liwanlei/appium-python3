@@ -20,11 +20,6 @@
 ###      2.9 untils：   公共的工具模块。
 ###      2.10 main.py   ui自动化测试的主脚本
 
--------
-
-目前存在的不足，只能支持单台设备，单线程跑测试用例，性能测试数据目前收集存放在txt文档中没有进行分析
----------
-
 # 友情推荐本人其他开源代码：
 #      1.python app自动化测试平台版本：https://github.com/liwanlei/UFATestPlan
 #      2.python接口测试框架：https://github.com/liwanlei/jiekou-python3

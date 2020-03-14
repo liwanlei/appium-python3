@@ -36,4 +36,4 @@ def parse_result(devices):
         else:
             failnum+=1
     LOG.info('解析设备测试结果完毕')
-    return  passnum,failnum,list_result
+    return  passnum,failnum, list_result

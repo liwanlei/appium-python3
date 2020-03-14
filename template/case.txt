@@ -24,7 +24,7 @@ class regtest(Parmer):
         self.dis_app = make_dis(Testplatform=self.parm['platformName'],TestplatformVersion=self.parm['platformVersion'],
                                 Testdevicesname=self.parm['deviceName'],TestappPackage=self.parm['appPackage'],
                                 TestappActivity=self.parm['appActivity'])
-        self.deriver = webdriver.Remote('http://localhost:'+self.port+'/wd/hub',self.dis_app)
+        self.deriver = webdriver.Remote('http://127.0.0.1:'+self.port+'/wd/hub',self.dis_app)
         LOG.info('reg测试用例开始执行')
     def tearDown(self):
         """ tearDown  """

@@ -42,8 +42,6 @@ class AppiumServer(object):
                 while True:
                     appium_line = appium.stdout.readline().strip().decode()
                     time.sleep(2)
-                    print(appium_line)
-                    print("---------start_server----------")
                     if 'listener started' in appium_line or 'Error: listen' in appium_line:
                         print("----server启动成功---")
                         break
@@ -53,7 +51,7 @@ class AppiumServer(object):
             os.popen("taskkill /f /im node.exe")
         else:
             for device in devices:
-                cmd = "lsof -i :{0}".format(device["port"])
+                cmd = "lsof -i :{0}".format(device)
                 plist = os.popen(cmd).readlines()
                 plisttmp = plist[1].split("    ")
                 plists = plisttmp[1].split(" ")

@@ -29,7 +29,7 @@ class StfPhoneOpear(object):
             iphone["platform"] = item['platform']
             iphone['version'] = item['version']
             iphone['serial'] = item['serial']
-            iphone['use']=item['using']
+            iphone['use'] = item['using']
             all_list_dict.append(iphone)
         return all_list_dict
 
@@ -55,7 +55,7 @@ class StfPhoneOpear(object):
         :param name:
         :return:
         '''
-        url=Test_stf_plan + "/api/v1/user/devices/" + name + '/remoteConnect'
+        url = Test_stf_plan + "/api/v1/user/devices/" + name + '/remoteConnect'
         requests_list = requests.post(url,
                                       headers=self.headers).text
         allreslut = json.loads(requests_list)
@@ -69,7 +69,7 @@ class StfPhoneOpear(object):
         :return:
         '''
         data = {"serial": name}
-        self.headers['Content-Type']='application/json'
+        self.headers['Content-Type'] = 'application/json'
         requests_list = requests.post(url=Test_stf_plan + "/api/v1/user/devices",
                                       headers=self.headers, data=json.dumps(data)).text
         allreslut = json.loads(requests_list)

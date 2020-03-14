@@ -5,20 +5,23 @@
 '''
 from config.config import Test_mobile_type, Test_plan_num, TestappPackage, TestAppActivity
 from untils.StfTestPhoneUntil import StfPhoneOpear
-import os, unittest,datetime,random
+import os, unittest, datetime, random
 from multiprocessing import Pool
 from testcase.regcasetest import regtest
 from untils.Parmeris import Parmer
 from untils.log import LOG
-from  untils.makecase import makecasefile
+from untils.makecase import makecasefile
 from untils.pyreport_excel import create
 from untils.AppiumServer import AppiumServer
+
 test_ophone = []
+
+
 def connectmobile() -> list:
     LOG.info("---开始链接stf平台-----")
     stf = StfPhoneOpear()
     all_list_phone = stf.getstflist()
-    if len(all_list_phone)<Test_plan_num:
+    if len(all_list_phone) < Test_plan_num:
         return []
     LOG.info("---获取可用设备列表-----")
     for item in all_list_phone:
@@ -29,19 +32,20 @@ def connectmobile() -> list:
     LOG.info("---准备申请设备-----")
     all_connect_phone = test_ophone[:Test_plan_num]
     connect_adb_device = []
-    for i in all_connect_phone:
-        LOG.info("---申请设备：%s-----"%i['serial'])
-        stf.oparyonephone(i['serial'])
-        LOG.info("---获取设备：%s 远程地址-----" % i['serial'])
-        connect = stf.getoneconnecturl(i['serial'])
+    for i in range(len(all_connect_phone)):
+        LOG.info("---申请设备：%s-----" % all_connect_phone[i]['serial'])
+        stf.oparyonephone(all_connect_phone[i]['serial'])
+        LOG.info("---获取设备：%s 远程地址-----" % all_connect_phone[i]['serial'])
+        connect = stf.getoneconnecturl(all_connect_phone[i]['serial'])
         all_detail = {}
-        LOG.info("---链接设备：%s -----" % i['serial'])
+        LOG.info("---链接设备：%s -----" % all_connect_phone[i]['serial'])
         os.popen("/Users/lileilei/Downloads/android-sdk-macosx/platform-tools/adb connect %s" % connect)
         reslut = os.popen("/Users/lileilei/Downloads/android-sdk-macosx/platform-tools/adb devices").read()
-        devices = str(reslut).split("\n")[1].split("\t")[0]
+        index = i + 1
+        devices = str(reslut).split("\n")[index].split("\t")[0]
         all_detail['devices'] = devices
-        all_detail['serial']=i['serial']
-        all_detail['version'] = i['version']
+        all_detail['serial'] = all_connect_phone[i]['serial']
+        all_detail['version'] = all_connect_phone[i]['version']
         connect_adb_device.append(all_detail)
     return connect_adb_device
 
@@ -79,35 +83,40 @@ def runnerCaseApp(devices):
     test_suit = unittest.TestSuite()
     test_suit.addTest(Parmer.parametrize(regtest, param=devices))  # 扩展的其他的测试用例均这样添加
     unittest.TextTestRunner(verbosity=2).run(test_suit)
-if __name__=="__main__":
+
+
+if __name__ == "__main__":
     LOG.info("测试开始执行")
     start_time = datetime.datetime.now()
     makecasefile('reg', 'reg', 'reg')
     path = os.getcwd()
     filenm = path + '/testreport/' + 'result.xls'
-    devicess=connectmobile()
+    devicess = connectmobile()
+    listport = []
     if len(devicess) > 0:
         for dev in devicess:
             app = {}
             app["devices"] = dev
-            app["port"] = str(random.randint(4593, 4598))
+            port = str(random.randint(4593, 4598))
+            app["port"] = port
             l_devices.append(app)
+            listport.append(port)
         appium_server = AppiumServer(l_devices)
-        appium_server.start_server()#启动服务
+        appium_server.start_server()  # 启动服务
         runnerPool(l_devices)
         try:
-            appium_server.stop_server(devicess)
+            appium_server.stop_server(listport)
         except Exception as e:
-            print("关闭服务失败，原因：%s"%e)
-            LOG.info("关闭服务失败，原因：%s"%e)
-        end_time=datetime.datetime.now()
-        hour=end_time-start_time
-        s=StfPhoneOpear()
+            print("关闭服务失败，原因：%s" % e)
+            LOG.info("关闭服务失败，原因：%s" % e)
+        end_time = datetime.datetime.now()
+        hour = end_time - start_time
+        s = StfPhoneOpear()
         for i in devicess:
             LOG.info("---归还设备：%s -----" % i['serial'])
             s.removeroneophen(i["serial"])
-        create(filename=filenm,devices_list=devicess,Test_version='2.0.1',testtime=str(hour))
-        LOG.info("测试执行完毕，耗时：%s"%hour)
+        create(filename=filenm, devices_list=devicess, Test_version='2.0.1', testtime=str(hour))
+        LOG.info("测试执行完毕，耗时：%s" % hour)
     else:
-        LOG.info("没有可用的%s设备,请查看stf链接设备"%Test_mobile_type)
-        print("没有可用的%s设备,请查看stf链接设备"%Test_mobile_type)
+        LOG.info("没有可用的%s设备,请查看stf链接设备" % Test_mobile_type)
+        print("没有可用的%s设备,请查看stf链接设备" % Test_mobile_type)
