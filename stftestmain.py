@@ -33,6 +33,8 @@ def connectmobile() -> list:
     all_connect_phone = test_ophone[:Test_plan_num]
     connect_adb_device = []
     for i in range(len(all_connect_phone)):
+        #TODO     设备申请后链接需要对链接的设备进行区分，
+        ## 先找到已知设备列表，链接后，找到新增的那台设备，现在有bug
         LOG.info("---申请设备：%s-----" % all_connect_phone[i]['serial'])
         stf.oparyonephone(all_connect_phone[i]['serial'])
         LOG.info("---获取设备：%s 远程地址-----" % all_connect_phone[i]['serial'])
