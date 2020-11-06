@@ -4,7 +4,6 @@ from untils.log import LOG
 from untils.disapp import make_dis
 from untils.gettestdata import huoqu_test
 from funtions.regpub import RegFuntion
-from untils.huoqu_xingneng import caijicpu,getnencun
 from untils.recording_txt import write_recording
 from config.config import TestappPackage
 path_test_case=os.path.join("path",'data')
@@ -16,13 +15,15 @@ class regtest(Parmer):
     def __init__(self,parm, methodName='runTest'):
         super(regtest, self).__init__(methodName)
         self.port=parm['port']
-        print(parm)
     """这是{}测试用例"""
     def setUp(self):
         """ setup """
-        self.dis_app = make_dis(Testplatform=self.parm['platformName'],TestplatformVersion=self.parm['platformVersion'],
-                                Testdevicesname=self.parm['deviceName'],TestappPackage=self.parm['appPackage'],
-                                TestappActivity=self.parm['appActivity'])
+        self.dis_app = make_dis_ios(platformName="ios",
+                                platformVersion=self.parm['platformVersion'],
+                                app=self.parm['app'],
+                                automationName=self.parm['automationName'],
+                                udid=self.parm['udid'],
+                                deviceName=self.parm['deviceName'])
         self.deriver = webdriver.Remote('http://127.0.0.1:'+self.port+'/wd/hub',self.dis_app)
         LOG.info('reg测试用例开始执行')
     def tearDown(self):

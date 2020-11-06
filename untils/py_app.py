@@ -1,5 +1,5 @@
 '''关于appium的一个简单的封装'''
-
+# todo  目前没有适配ios和安卓的单独的定位
 
 class deriver_fengzhuang():
     def __init__(self, driver):

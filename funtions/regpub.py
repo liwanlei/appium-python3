@@ -12,15 +12,14 @@ from untils.log import LOG, logger
 from excetfuntion.exectfuntion import Makeappcase
 import os
 
-path = os.getcwd()
-path_yongli = path + '/data/dingwei/reg.yaml'
-
 
 @logger('注册测试')
 class RegFuntion:
     def __init__(self, deriver):
+        path = os.getcwd()
+        path_ = os.path.join(os.path.join(path, 'data'), 'location')
+        self.path = path_ + 'reg.yaml'
         self.deriver = deriver
-        self.path = path_yongli
         self.open = Makeappcase(self.deriver, path=self.path)
 
     def reg(self, **kwargs):

@@ -10,7 +10,9 @@ from untils.recording_txt import write_recording
 from config.config import TestappPackage
 
 path = os.getcwd()
-testcasedata = path + '/data/testcase_data.xlsx'
+
+path_test_case=os.path.join("path",'data')
+testcasedata = path_test_case + 'testcase_data.xlsx'
 data_test = huoqu_test(testcasedata, index=1)
 from untils.saveresult import save_result
 

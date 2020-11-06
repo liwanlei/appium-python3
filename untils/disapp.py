@@ -21,7 +21,7 @@ def make_dis(Testplatform,TestplatformVersion,Testdevicesname,TestappPackage,Tes
     dis_app['resetKeyboard'] =TestresetKeyboard
     return  dis_app
 @logger('开启读取IOS相关的配置')
-def make_dis(TestplatformVersion,apppath, udid,deviceName):
+def make_dis_ios(TestplatformVersion,apppath, udid,deviceName):
     dis_app={}
     dis_app['platformName'] = "ios"
     dis_app['platformVersion'] = TestplatformVersion
