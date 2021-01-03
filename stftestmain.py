@@ -75,7 +75,8 @@ def runnerPool(getDevices):
         _pool.append(_initApp)
         devices_Pool.append(_initApp)
     pool = Pool(len(devices_Pool))
-    pool.map(runnerCaseApp, devices_Pool)
+    for dev in devices_Pool:
+        pool.map(runnerCaseApp, dev)
     pool.close()
     pool.join()
 
