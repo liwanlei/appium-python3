@@ -12,10 +12,11 @@ class Parmer(unittest.TestCase):
         super(Parmer, self).__init__(methodName)
         self.parme = parme
 
-    def parametrize(testcase_klass, param=None):
+    @classmethod
+    def parametrize(testcase_klass, parame=None):
         testloader = unittest.TestLoader()
         testnames = testloader.getTestCaseNames(testcase_klass)
         suite = unittest.TestSuite()
         for name in testnames:
-            suite.addTest(testcase_klass(methodName=name, parm=param))
+            suite.addTest(testcase_klass(methodName=name, parme=parame))
         return suite
