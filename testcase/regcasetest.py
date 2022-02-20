@@ -19,21 +19,21 @@ from untils.saveresult import save_result
 
 @ddt.ddt
 class regtest(Parmer):
-    def __init__(self, parm, methodName='runTest'):
+    def __init__(self, parme, methodName='runTest'):
         super(regtest, self).__init__(methodName)
-        self.port = parm['port']
-        LOG.info(parm)
-        self.parm = parm
+        self.port = parme['port']
+        LOG.info(parme)
+        self.parme = parme
 
     """这是reg测试用例"""
 
     def setUp(self):
         """ setup """
-        self.dis_app = make_dis(Testplatform=self.parm['platformName'],
-                                TestplatformVersion=self.parm['platformVersion'],
-                                Testdevicesname=self.parm['deviceName'],
-                                TestappPackage=self.parm['appPackage'],
-                                TestappActivity=self.parm['appActivity'])
+        self.dis_app = make_dis(Testplatform=self.parme['platformName'],
+                                TestplatformVersion=self.parme['platformVersion'],
+                                Testdevicesname=self.parme['deviceName'],
+                                TestappPackage=self.parme['appPackage'],
+                                TestappActivity=self.parme['appActivity'])
         self.deriver = webdriver.Remote('http://127.0.0.1:' + self.port + '/wd/hub', self.dis_app)
         LOG.info('reg测试用例开始执行')
 

@@ -76,7 +76,7 @@ def runnerPool(getDevices):
         devices_Pool.append(_initApp)
     pool = Pool(len(devices_Pool))
     for dev in devices_Pool:
-        pool.map(runnerCaseApp, dev)
+        pool.map(runnerCaseApp, [dev,])
     pool.close()
     pool.join()
 
@@ -84,7 +84,7 @@ def runnerPool(getDevices):
 def runnerCaseApp(devices):
     '''利用unittest的testsuite来组织测试用例'''
     test_suit = unittest.TestSuite()
-    test_suit.addTest(Parmer.parametrize(regtest, param=devices))  # 扩展的其他的测试用例均这样添加
+    test_suit.addTest(Parmer(parme=devices).parametrize(regtest,devices))  # 扩展的其他的测试用例均这样添加
     unittest.TextTestRunner(verbosity=2).run(test_suit)
 
 
