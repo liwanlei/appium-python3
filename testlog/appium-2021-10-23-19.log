@@ -1,0 +1,3 @@
+[2021-10-23 19:42:30.106234] INFO: appium: 当前模块 获取测试用例所需要的参数
+[2021-10-23 19:42:30.106619] INFO: appium: 全部kwargs参数信息 , {'index': 1}
+[2021-10-23 19:42:30.106758] INFO: appium: 获取测试用例参数失败！失败原因：[Errno 2] No such file or directory: 'path/datatestcase_data.xlsx'

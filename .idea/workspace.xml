@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0953cdcd-90e3-4f96-850d-46204d0f9cbd" name="Default" comment="开始增加IOS的适配，待做的可以参考TODO">
-      <change afterPath="$PROJECT_DIR$/senddevicecase.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tytest.py" afterDir="false" />
+    <list default="true" id="0953cdcd-90e3-4f96-850d-46204d0f9cbd" name="Default" comment="增加测试用例重试">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stftestmain.py" beforeDir="false" afterPath="$PROJECT_DIR$/stftestmain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcase/regcasetest.py" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/regcasetest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untils/Parmeris.py" beforeDir="false" afterPath="$PROJECT_DIR$/untils/Parmeris.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/senddevicecase.py" beforeDir="false" afterPath="$PROJECT_DIR$/senddevicecase.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,13 +44,14 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\Desktop\xuesheng\appium-python3\config" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/untils" />
       <recent name="C:\Users\Administrator\Desktop\xuesheng\appium-python3\untils" />
       <recent name="C:\Users\Administrator\Desktop\xuesheng\appium-python3\config" />
       <recent name="C:\Users\Administrator\Desktop\xuesheng\appium-python3\testcase" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\xuesheng\appium-python3\config" />
     </key>
   </component>
   <component name="RunManager" selected="Python tests.Unittests in senddevicecase.py">
@@ -201,6 +198,7 @@
       <workItem from="1634977280470" duration="5218000" />
       <workItem from="1639212822507" duration="751000" />
       <workItem from="1639220541760" duration="174000" />
+      <workItem from="1645340474313" duration="405000" />
     </task>
     <task id="LOCAL-00001" summary="更新代码，解决已知bug">
       <created>1584191055356</created>
@@ -251,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630842879943</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="增加测试用例重试">
+      <created>1645340544859</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1645340544859</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,49 +280,38 @@
     <MESSAGE value="增加jenkins适配" />
     <MESSAGE value="开始增加IOS的适配" />
     <MESSAGE value="开始增加IOS的适配，待做的可以参考TODO" />
-    <option name="LAST_COMMIT_MESSAGE" value="开始增加IOS的适配，待做的可以参考TODO" />
+    <MESSAGE value="增加测试用例重试" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加测试用例重试" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="315" y="35" key="CommitChangelistDialog2" timestamp="1630842879755">
+    <state x="316" y="32" key="CommitChangelistDialog2" timestamp="1645340544681">
       <screen x="0" y="23" width="1440" height="825" />
     </state>
-    <state x="315" y="35" key="CommitChangelistDialog2/0.23.1440.825@0.23.1440.825" timestamp="1630842879755" />
-    <state x="144" y="94" key="DiffContextDialog" timestamp="1630842600797">
+    <state x="316" y="32" key="CommitChangelistDialog2/0.23.1440.825@0.23.1440.825" timestamp="1645340544681" />
+    <state width="1398" height="236" key="GridCell.Tab.0.bottom" timestamp="1645340751723">
       <screen x="0" y="23" width="1440" height="825" />
     </state>
-    <state x="144" y="94" key="DiffContextDialog/0.23.1440.825@0.23.1440.825" timestamp="1630842600797" />
-    <state width="1398" height="236" key="GridCell.Tab.0.bottom" timestamp="1634991127822">
+    <state width="1398" height="236" key="GridCell.Tab.0.bottom/0.23.1440.825@0.23.1440.825" timestamp="1645340751723" />
+    <state width="1398" height="236" key="GridCell.Tab.0.center" timestamp="1645340751723">
       <screen x="0" y="23" width="1440" height="825" />
     </state>
-    <state width="1398" height="236" key="GridCell.Tab.0.bottom/0.23.1440.825@0.23.1440.825" timestamp="1634991127822" />
-    <state width="1398" height="236" key="GridCell.Tab.0.center" timestamp="1634991127821">
+    <state width="1398" height="236" key="GridCell.Tab.0.center/0.23.1440.825@0.23.1440.825" timestamp="1645340751723" />
+    <state width="1398" height="236" key="GridCell.Tab.0.left" timestamp="1645340751722">
       <screen x="0" y="23" width="1440" height="825" />
     </state>
-    <state width="1398" height="236" key="GridCell.Tab.0.center/0.23.1440.825@0.23.1440.825" timestamp="1634991127821" />
-    <state width="1398" height="236" key="GridCell.Tab.0.left" timestamp="1634991127821">
+    <state width="1398" height="236" key="GridCell.Tab.0.left/0.23.1440.825@0.23.1440.825" timestamp="1645340751722" />
+    <state width="1398" height="236" key="GridCell.Tab.0.right" timestamp="1645340751723">
       <screen x="0" y="23" width="1440" height="825" />
     </state>
-    <state width="1398" height="236" key="GridCell.Tab.0.left/0.23.1440.825@0.23.1440.825" timestamp="1634991127821" />
-    <state width="1398" height="236" key="GridCell.Tab.0.right" timestamp="1634991127821">
+    <state width="1398" height="236" key="GridCell.Tab.0.right/0.23.1440.825@0.23.1440.825" timestamp="1645340751723" />
+    <state x="320" y="175" key="Vcs.Push.Dialog.v2" timestamp="1645340547779">
       <screen x="0" y="23" width="1440" height="825" />
     </state>
-    <state width="1398" height="236" key="GridCell.Tab.0.right/0.23.1440.825@0.23.1440.825" timestamp="1634991127821" />
-    <state x="497" y="153" key="RollbackChangesDialog" timestamp="1630842870819">
-      <screen x="0" y="23" width="1440" height="825" />
-    </state>
-    <state x="497" y="153" key="RollbackChangesDialog/0.23.1440.825@0.23.1440.825" timestamp="1630842870819" />
-    <state x="229" y="74" key="SettingsEditor" timestamp="1630842718706">
-      <screen x="0" y="23" width="1440" height="825" />
-    </state>
-    <state x="229" y="74" key="SettingsEditor/0.23.1440.825@0.23.1440.825" timestamp="1630842718706" />
-    <state x="509" y="360" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1630842887106">
-      <screen x="0" y="23" width="1440" height="825" />
-    </state>
-    <state x="509" y="360" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.825@0.23.1440.825" timestamp="1630842887106" />
+    <state x="320" y="175" key="Vcs.Push.Dialog.v2/0.23.1440.825@0.23.1440.825" timestamp="1645340547779" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/appium_python3$stftestmain.coverage" NAME="stftestmain Coverage Results" MODIFIED="1634989349111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/appium_python3$Unittests_in_senddevicecase_py.coverage" NAME="Unittests in senddevicecase.py Coverage Results" MODIFIED="1634989570674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/appium_python3$Unittests_in_senddevicecase_py.coverage" NAME="Unittests in senddevicecase.py Coverage Results" MODIFIED="1645340727723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/appium_python3$Unittests_for_senddevicecase_regtest_testreg.coverage" NAME="Unittests for senddevicecase.regtest.testreg Coverage Results" MODIFIED="1634977791669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/appium_python3$named.coverage" NAME="named Coverage Results" MODIFIED="1584700712941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

@@ -7,6 +7,7 @@
 1.获取设备信息
 2.获取用例
 3.分配给设备执行
+4.可以不同的方式去选择执行不一样的测试用例
 
 '''
 import unittest
@@ -57,8 +58,10 @@ def ruun(parame, testcase):
 
 if __name__ == "__main__":
 
-    case = [{'name': "login", "case": [{'phone1': "baiejing"}, {'phone1': "baiejing"}]},
-            {"name": "regin", 'case': [{'phone2': "baiejing"}, {'phone2': "baiejing"}]}]
+    case = [{'name': "login", "case": [{'phone1': "baiejing"},
+                                       {'phone1': "baiejing"}]},
+            {"name": "regin", 'case': [{'phone2': "baiejing"},
+                                       {'phone2': "baiejing"}]}]
     name = Pool()
     relustlist = []
     for i in range(len(case)):
