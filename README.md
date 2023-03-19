@@ -27,7 +27,7 @@
 #      2.python接口测试框架：https://github.com/liwanlei/jiekou-python3
 #      3.python接口测试平台版本：https://github.com/liwanlei/FXTest
 #      4.python+flask 做后台，实现微信小程序：https://github.com/liwanlei/webchat_app
-
+![Alt text](https://github.com/liwanlei/FXTest/blob/master/image/wx.jpeg)
 ## 3.效果展示图
 ###  整体结构
 ![Alt text](https://github.com/liwanlei/appium-python3/blob/master/img/zhutijiegou.png)
