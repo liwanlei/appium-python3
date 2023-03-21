@@ -1,7 +1,7 @@
 Appium-Python-Client==0.26
 ddt==1.1.1
 Logbook==1.1.0
-PyYAML==3.12
+PyYAML==5.4
 selenium==3.0.2
 xlrd==1.0.0
 XlsxWriter==1.0.2
